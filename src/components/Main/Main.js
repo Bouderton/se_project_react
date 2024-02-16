@@ -1,7 +1,17 @@
 import "./Main.css";
 
 const Main = () => {
-  return <h1>Hello World</h1>;
+  return (
+    <main className="main">
+      <section id="weather">
+        <div>75F</div>
+        <div>
+          <img />
+        </div>
+      </section>
+      <section id="card-section">Card Section</section>
+    </main>
+  );
 };
 
 export default Main;
