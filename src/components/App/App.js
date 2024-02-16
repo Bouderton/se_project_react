@@ -1,8 +1,20 @@
-import logo from "../Images/logo.svg";
+import logo from "../../images/logo.svg";
 import "./App.css";
 
 function App() {
-  return <h1>Hello World</h1>;
+  return (
+    <div>
+      <header className="header">
+        <div>Logo</div>
+        <div>Date</div>
+        <div>
+          <button type="text">Add New Clothes</button>
+        </div>
+        <div>Name</div>
+        <div>Avatar Logo</div>
+      </header>
+    </div>
+  );
 }
 
 export default App;
