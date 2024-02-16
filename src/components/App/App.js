@@ -1,18 +1,11 @@
 import logo from "../../images/logo.svg";
 import "./App.css";
+import Header from "../Header/Header";
 
 function App() {
   return (
     <div>
-      <header className="header">
-        <div>Logo</div>
-        <div>Date</div>
-        <div>
-          <button type="text">Add New Clothes</button>
-        </div>
-        <div>Name</div>
-        <div>Avatar Logo</div>
-      </header>
+      <Header />
     </div>
   );
 }
