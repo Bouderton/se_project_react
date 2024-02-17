@@ -44,9 +44,12 @@ const Main = () => {
   return (
     <main className="main">
       <section className="card__section" id="card-section">
-        {defaultClothingItems.map((x) => (
-          <ItemCard x={x} />
-        ))}
+        Today is 75F / You may want to wear:
+        <div className="card__items">
+          {defaultClothingItems.map((x) => (
+            <ItemCard x={x} />
+          ))}
+        </div>
       </section>
     </main>
   );

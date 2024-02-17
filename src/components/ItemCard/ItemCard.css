@@ -1,9 +1,6 @@
 .card__section {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
   margin: 40px auto 0;
+  font-size: 20px;
 }
 
 .card__name {
@@ -15,4 +12,12 @@
   height: 450px;
   border-radius: 10px;
   border: 1px red;
+}
+
+.card__items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 34px;
 }
