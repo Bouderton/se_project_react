@@ -1,4 +1,5 @@
 import "./Main.css";
+import ItemCard from "../ItemCard/ItemCard";
 
 const defaultClothingItems = [
   {
@@ -43,17 +44,9 @@ const Main = () => {
   return (
     <main className="main">
       <section className="card__section" id="card-section">
-        {defaultClothingItems.map((x) => {
-          console.log(x);
-          return (
-            <div>
-              <div>
-                <img src={x.link} />
-              </div>
-              <div>x.name</div>
-            </div>
-          );
-        })}
+        {defaultClothingItems.map((x) => (
+          <ItemCard x={x} />
+        ))}
       </section>
     </main>
   );

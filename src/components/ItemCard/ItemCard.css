@@ -1,0 +1,17 @@
+.card__section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card__name {
+  text-align: center;
+}
+
+.card__image {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  border: 1px red;
+}
