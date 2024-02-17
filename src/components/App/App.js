@@ -1,6 +1,7 @@
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
 
 function App() {
   const weatherTemp = "102F";
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Header />
       <Main weatherTemp={weatherTemp} />
+      <Footer />
     </div>
   );
 }
