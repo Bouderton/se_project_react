@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       <Header />
-      <WeatherCard />
+      <WeatherCard day={false} type="moon" />
       <Main />
     </div>
   );
