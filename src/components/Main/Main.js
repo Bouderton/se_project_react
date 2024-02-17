@@ -1,5 +1,6 @@
 import "./Main.css";
 import ItemCard from "../ItemCard/ItemCard";
+import WeatherCard from "../WeatherCard/WeatherCard";
 
 const defaultClothingItems = [
   {
@@ -41,10 +42,13 @@ const defaultClothingItems = [
 ];
 
 const Main = () => {
+  const weatherTemp = "102F";
+  // this will recieve weather data to be rendered ^^
   return (
     <main className="main">
+      <WeatherCard day={true} type="cloudy" weatherTemp={weatherTemp} />
       <section className="card__section" id="card-section">
-        Today is 75F / You may want to wear:
+        Today is {weatherTemp} / You may want to wear:
         <div className="card__items">
           {defaultClothingItems.map((x) => (
             <ItemCard x={x} />
