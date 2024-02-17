@@ -1,12 +1,12 @@
 import "./ItemCard.css";
 
-const ItemCard = ({ x }) => {
+const ItemCard = ({ item }) => {
   return (
     <div>
       <div>
-        <img src={x.link} className="card__image" />
+        <img src={item.link} className="card__image" />
       </div>
-      <div className="card__name">{x.name}</div>
+      <div className="card__name">{item.name}</div>
     </div>
   );
 };
