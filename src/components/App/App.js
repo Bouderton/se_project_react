@@ -1,4 +1,3 @@
-import logo from "../../images/logo.svg";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -8,7 +7,7 @@ function App() {
   return (
     <div>
       <Header />
-      <WeatherCard day={false} type="cloudy" />
+      <WeatherCard day={true} type="sunny" />
       <Main />
     </div>
   );
