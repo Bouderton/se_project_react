@@ -3,6 +3,7 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
+  margin: 40px auto 0;
 }
 
 .card__name {
@@ -10,8 +11,8 @@
 }
 
 .card__image {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 450px;
   border-radius: 10px;
   border: 1px red;
 }

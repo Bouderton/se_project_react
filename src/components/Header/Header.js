@@ -9,7 +9,7 @@ const Header = () => {
         <div>
           <img src={logo} alt="logo" />
         </div>
-        <div>Date</div>
+        <div>Date, Location</div>
       </div>
       <div className="header__avatar-logo">
         <div>
@@ -17,7 +17,7 @@ const Header = () => {
             Add New Clothes
           </button>
         </div>
-        <div>Ryan Khazal</div>
+        <div>Terrence Tegegne</div>
         <div>
           <img src={avatar} alt="avatar log" />
         </div>
