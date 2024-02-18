@@ -11,7 +11,31 @@ function App() {
       <Header />
       <Main weatherTemp={weatherTemp} />
       <Footer />
-      <ModalWithForm title="New Garmet">These are the children</ModalWithForm>
+      <ModalWithForm title="New Garmet">
+        <label>
+          Name
+          <input type="text" name="name" minLength="1" maxLength="30" />
+        </label>
+        <label>
+          Image
+          <input type="url" name="link" minLength="1" />
+        </label>
+        <p>Select Weather Type</p>
+        <div>
+          <div>
+            <input type="radio" id="hot" value="hot" />
+            <label>Hot</label>
+          </div>
+          <div>
+            <input type="radio" id="warm" value="warm" />
+            <label>Warm</label>
+          </div>
+          <div>
+            <input type="radio" id="cold" value="cold" />
+            <label>Cold</label>
+          </div>
+        </div>
+      </ModalWithForm>
     </div>
   );
 }
