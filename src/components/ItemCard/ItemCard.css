@@ -14,6 +14,10 @@
   border: 1px red;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__items {
   display: flex;
   justify-content: center;
