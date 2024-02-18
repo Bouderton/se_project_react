@@ -17,3 +17,13 @@
   border-radius: 20px;
   padding: 28px 28px 36px;
 }
+
+.modal__submit-button {
+  width: 124px;
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}

@@ -2,7 +2,7 @@ import "./Header.css";
 import avatar from "../../images/avatar-logo.svg";
 import logo from "../../images/wtwr.svg";
 
-const Header = () => {
+const Header = ({ onCreateModal }) => {
   return (
     <header className="header">
       <div className="header__logo">
@@ -13,7 +13,7 @@ const Header = () => {
       </div>
       <div className="header__avatar-logo">
         <div>
-          <button type="text" className="header__button">
+          <button onClick={onCreateModal} className="header__button">
             Add New Clothes
           </button>
         </div>
