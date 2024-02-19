@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "CabinetGrotesk-Medium";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/CabinetGrotesk_Complete/Fonts/OTF/CabinetGrotesk-Medium.otf")
+    format("opentype");
+}
+/* D:\coding\se_project_react\src\vendor\fonts\CabinetGrotesk_Complete\Fonts\OTF\CabinetGrotesk-Medium.otf */
