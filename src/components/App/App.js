@@ -11,13 +11,17 @@ function App() {
   const handleCreateModal = () => {
     setActiveModal("create");
   };
+
+  const handleCloseModal = () => {
+    setActiveModal("");
+  };
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={weatherTemp} />
       <Footer />
       {activeModal === "create" && (
-        <ModalWithForm title="New Garmet">
+        <ModalWithForm title="New Garmet" onClose={handleCloseModal}>
           <label>
             Name
             <input type="text" name="name" minLength="1" maxLength="30" />
