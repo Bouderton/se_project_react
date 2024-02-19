@@ -13,7 +13,7 @@ function App() {
   };
   return (
     <div>
-      <Header onClick={handleCreateModal} />
+      <Header onCreateModal={handleCreateModal} />
       <Main weatherTemp={weatherTemp} />
       <Footer />
       {activeModal === "create" && (
