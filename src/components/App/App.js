@@ -30,27 +30,40 @@ function App() {
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garmet" onClose={handleCloseModal}>
-          <label>
+          <label className="modal__form-label">
             Name
-            <input type="text" name="name" minLength="1" maxLength="30" />
+            <input
+              type="text"
+              name="name"
+              minLength="1"
+              maxLength="30"
+              placeholder="Name"
+              className="modal__form-input"
+            />
           </label>
-          <label>
+          <label className="modal__form-label">
             Image
-            <input type="url" name="link" minLength="1" />
+            <input
+              type="url"
+              name="link"
+              placeholder="Image URL"
+              minLength="1"
+              className="modal__form-input"
+            />
           </label>
-          <p>Select Weather Type</p>
-          <div>
+          <p className="modal__weather-title">Select Weather Type</p>
+          <div className="modal__weather-type">
             <div>
               <input type="radio" id="hot" value="hot" />
-              <label>Hot</label>
+              <label className="modal__weather-option">Hot</label>
             </div>
             <div>
               <input type="radio" id="warm" value="warm" />
-              <label>Warm</label>
+              <label className="modal__weather-option">Warm</label>
             </div>
             <div>
               <input type="radio" id="cold" value="cold" />
-              <label>Cold</label>
+              <label className="modal__weather-option">Cold</label>
             </div>
           </div>
         </ModalWithForm>

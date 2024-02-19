@@ -27,3 +27,26 @@
   border-radius: 8px;
   font-size: 16px;
 }
+
+.modal__form-input {
+  width: 440px;
+  margin: 8px auto 24px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.modal__form-label {
+  width: 42px;
+}
+
+.modal__weather-type {
+  margin: 0 auto 32px;
+}
+
+.modal__weather-option {
+  margin: 8px 0 0 5px;
+}
+
+.modal__weather-title {
+  margin: 0 auto 12px;
+}
