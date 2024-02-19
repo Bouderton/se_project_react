@@ -5,8 +5,8 @@ const ItemModal = ({ selectedCard }) => {
     <div className={"modal"}>
       <div className="modal__content">
         <img src={selectedCard.link} />
-        <div>Item Name</div>
-        <div>Weather Type</div>
+        <div>{selectedCard.name}</div>
+        <div>Weather Type: {selectedCard.weather}</div>
       </div>
     </div>
   );
