@@ -10,9 +10,11 @@ const ModalWithForm = ({
   return (
     <div className={`modal modal__type_${name}`}>
       <div className="modal__content">
-        <button type="button" onClick={onClose}>
-          Close
-        </button>
+        <button
+          type="button"
+          onClick={onClose}
+          className="modal__close-button"
+        />
         <h3>{title}</h3>
         <form className="form">
           {children}
@@ -26,12 +28,3 @@ const ModalWithForm = ({
 };
 
 export default ModalWithForm;
-
-/* <fieldset className="form__fieldset">
-          <input placeholder="Name" type="text">
-            Name
-          </input>
-          <input placeholder="Image URL" type="url">
-            Image URL
-          </input>
-        </fieldset> */

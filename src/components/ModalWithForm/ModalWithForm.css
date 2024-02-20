@@ -50,3 +50,14 @@
 .modal__weather-title {
   margin: 0 auto 12px;
 }
+
+.modal__close-button {
+  background: transparent url("../../images/close-button.svg") center no-repeat;
+  width: 20px;
+  height: 20px;
+  border: none;
+}
+
+.modal__close-button:hover {
+  cursor: pointer;
+}
