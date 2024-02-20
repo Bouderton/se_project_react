@@ -22,7 +22,6 @@ function App() {
     setActiveModal("preview");
     setSelectedCard(card);
   };
-  console.log(selectedCard);
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />

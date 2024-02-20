@@ -1,3 +1,5 @@
+@import url(../../vendor/fonts.css);
+
 .modal {
   position: fixed;
   top: 0;
@@ -36,22 +38,27 @@
 }
 
 .modal__form-label {
+  font-family: "CabinetGrotesk-Medium", serif;
   width: 42px;
 }
 
 .modal__weather-type {
+  font-family: "CabinetGrotesk-Medium", serif;
   margin: 0 auto 32px;
 }
 
 .modal__weather-option {
+  font-family: "CabinetGrotesk-Medium", serif;
   margin: 8px 0 0 5px;
 }
 
 .modal__weather-title {
+  font-family: "CabinetGrotesk-Medium", serif;
   margin: 0 auto 12px;
 }
 
 .modal__close-button {
+  font-family: "CabinetGrotesk-Medium", serif;
   background: transparent url("../../images/close-button.svg") center no-repeat;
   width: 20px;
   height: 20px;
