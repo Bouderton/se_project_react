@@ -50,8 +50,8 @@ function App() {
               className="modal__form-input"
             />
           </label>
-          <p className="modal__weather-title">Select Weather Type</p>
           <div className="modal__weather-type">
+            <p className="modal__weather-title">Select Weather Type</p>
             <div>
               <input type="radio" id="hot" value="hot" />
               <label className="modal__weather-option">Hot</label>
