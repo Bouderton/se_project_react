@@ -6,6 +6,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { useState, useEffect } from "react";
 import { getForecast } from "../util/weatherApi";
+import { parseWeatherData } from "../util/weatherApi";
 
 function App() {
   const weatherTemp = "60F";
@@ -27,6 +28,7 @@ function App() {
   useEffect(() => {
     getForecast().then((data) => {
       console.log(data);
+      parseWeatherData(data);
     });
   }, []);
 
