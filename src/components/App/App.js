@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { useState, useEffect } from "react";
-import getForecast from "../util/weatherApi";
+import { getForecast } from "../util/weatherApi";
 
 function App() {
   const weatherTemp = "60F";
