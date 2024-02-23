@@ -13,25 +13,24 @@ const APIkey = "6a90cb32554d48a125369911ffa482e2";
 // }
 
 export const getForecast = () => {
-  return fetch(
+  const weatherApi = fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
-  )
-    .then((res) => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        return Promise.reject(`Error: ${res.status}`);
-      }
-    })
-    .then((data) => {
-      return parseWeatherData(data);
-    });
+  ).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`Error: ${res.status}`);
+    }
+  });
+  // .then((data) => {
+  //   return parseWeatherData(data);
+  // });
+  return weatherApi;
 };
 
 export const parseWeatherData = (data) => {
   const main = data.main;
   const temp = main && main.temp;
-  console.log(Math.ceil(temp));
   return Math.ceil(temp);
 };
 
