@@ -26,9 +26,7 @@ function App() {
   };
 
   useEffect(() => {
-    getForecast().then((data) => {
-      parseWeatherData(data);
-    });
+    getForecast().then((data) => {});
   }, []);
 
   return (
