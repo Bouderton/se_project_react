@@ -4,32 +4,40 @@
 const latitude = 44.34;
 const longitude = 10.99;
 const APIkey = "6a90cb32554d48a125369911ffa482e2";
-function checkResponse(res) {
-  if (res.ok) {
-    return res.json();
-  } else {
-    return Promise.reject(`Error: ${res.status}`);
-  }
-}
+// function checkResponse(res) {
+//   if (res.ok) {
+//     return res.json();
+//   } else {
+//     return Promise.reject(`Error: ${res.status}`);
+//   }
+// }
 
 export const getForecast = () => {
-  const weatherApi = fetch(
+  return fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
-  ).then((res) => {
-    checkResponse(res);
-  });
-  return weatherApi;
+  )
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        return Promise.reject(`Error: ${res.status}`);
+      }
+    })
+    .then((data) => {
+      return parseWeatherData(data);
+    });
 };
 
 export const parseWeatherData = (data) => {
   console.log(data);
   const main = data.main;
+  console.log(main);
   const temp = main && main.temp;
   console.log(temp);
   return temp;
 };
 
-const testResponse = {
+const response = {
   coord: {
     lon: 10.99,
     lat: 44.34,
