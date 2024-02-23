@@ -31,7 +31,6 @@ export const getForecast = () => {
 export const parseWeatherData = (data) => {
   console.log(data);
   const main = data.main;
-  console.log(main);
   const temp = main && main.temp;
   console.log(temp);
   return temp;

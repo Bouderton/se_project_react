@@ -63,6 +63,9 @@
   width: 20px;
   height: 20px;
   border: none;
+  position: relative;
+  top: 0;
+  left: 470px;
 }
 
 .modal__close-button:hover {
