@@ -37,7 +37,7 @@ function App() {
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
-      <Main weatherTemp={`${temp}°F`} onSelectCard={handleSelectedCard} />
+      <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garmet" onClose={handleCloseModal}>
@@ -87,3 +87,6 @@ function App() {
 }
 
 export default App;
+
+//SUBMIT ITEM CARD FUNCTIONALITY
+// CLEAN UP CODE
