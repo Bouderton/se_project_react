@@ -32,7 +32,6 @@ function App() {
       setTemp(temperature);
     });
   }, []);
-  console.log(temp);
 
   return (
     <div>
