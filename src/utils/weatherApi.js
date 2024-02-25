@@ -4,27 +4,18 @@
 const latitude = 36.17;
 const longitude = 115.13;
 const APIkey = "6a90cb32554d48a125369911ffa482e2";
-// function checkResponse(res) {
-//   if (res.ok) {
-//     return res.json();
-//   } else {
-//     return Promise.reject(`Error: ${res.status}`);
-//   }
-// }
+function checkResponse(res) {
+  if (res.ok) {
+    return res.json();
+  } else {
+    return Promise.reject(`Error: ${res.status}`);
+  }
+}
 
 export const getForecast = () => {
   const weatherApi = fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${APIkey}`
-  ).then((res) => {
-    if (res.ok) {
-      return res.json();
-    } else {
-      return Promise.reject(`Error: ${res.status}`);
-    }
-  });
-  // .then((data) => {
-  //   return parseWeatherData(data);
-  // });
+  ).then((res) => checkResponse(res));
   return weatherApi;
 };
 
@@ -37,7 +28,7 @@ export const parseWeatherData = (data) => {
 // const response = {
 //   coord: {
 //     lon: 10.99,
-//     lat: 44.34,
+//     lat: 44.34,nj
 //   },
 //   weather: [
 //     {
