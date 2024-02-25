@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2ec0b86a.css",
+    "main.js": "/static/js/main.00f2e275.js",
+    "static/js/453.2b71ad4e.chunk.js": "/static/js/453.2b71ad4e.chunk.js",
+    "static/media/avatar-logo.svg": "/static/media/avatar-logo.94a0b8b18a3d13e4c353f063199f56af.svg",
+    "static/media/CabinetGrotesk-Medium.otf": "/static/media/CabinetGrotesk-Medium.b8b578586abc9d55dcda.otf",
+    "static/media/day-snow.svg": "/static/media/day-snow.a5bb7441280cef64ae081acadb7d6e66.svg",
+    "static/media/night-snow.svg": "/static/media/night-snow.20a89d711249712380ea9f4269b386a3.svg",
+    "static/media/day-storm.svg": "/static/media/day-storm.51c68e175fd385c6055462b91d462bd5.svg",
+    "static/media/night-storm.svg": "/static/media/night-storm.b98983c750d3f283a9267efc3c3fd940.svg",
+    "static/media/day-rain.svg": "/static/media/day-rain.8fd968acf8cb57624e2a990b324c1278.svg",
+    "static/media/night-rain.svg": "/static/media/night-rain.ebe0301b9856c6c8564df5c8beea1ac8.svg",
+    "static/media/day-fog.svg": "/static/media/day-fog.8ad4efe699a8e3a16ae0220f3b5a3d48.svg",
+    "static/media/night-fog.svg": "/static/media/night-fog.cee462810b2a7c8696b7701170241a66.svg",
+    "static/media/wtwr.svg": "/static/media/wtwr.e6922bf0cc65fda664069a7fb7bb200c.svg",
+    "static/media/night-cloudy.svg": "/static/media/night-cloudy.c52565b10982a97a5a67275442bd12ee.svg",
+    "static/media/day-cloudy.svg": "/static/media/day-cloudy.afb98af2bd43d3a2a330e655695bd2c9.svg",
+    "static/media/close-button.svg": "/static/media/close-button.41654df85174806f9922.svg",
+    "index.html": "/index.html",
+    "static/media/day-sunny.svg": "/static/media/day-sunny.1c3ffd02d92146a2673939be89b88d54.svg",
+    "static/media/night-moon.svg": "/static/media/night-moon.ae0e6bbe1e0bfc883f3ba207396bf3b4.svg",
+    "main.2ec0b86a.css.map": "/static/css/main.2ec0b86a.css.map",
+    "main.00f2e275.js.map": "/static/js/main.00f2e275.js.map",
+    "453.2b71ad4e.chunk.js.map": "/static/js/453.2b71ad4e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ec0b86a.css",
+    "static/js/main.00f2e275.js"
+  ]
+}
