@@ -4,7 +4,9 @@
   align-items: center;
   min-height: 60px;
   padding: 0 20px;
-  font-size: 20px;
+  font-size: 18px;
+  font-family: "CabinetGrotesk-Medium", serif;
+  font-weight: 600;
 }
 
 .header__logo {
@@ -24,6 +26,9 @@
   font-size: 18px;
   border: none;
   background: none;
+  font-size: 18px;
+  font-family: "CabinetGrotesk-Medium", serif;
+  font-weight: 600;
 }
 
 .header__button:hover {

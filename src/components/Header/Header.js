@@ -9,7 +9,7 @@ const Header = ({ onCreateModal }) => {
         <div>
           <img src={logo} alt="logo" />
         </div>
-        <div>Date, Location</div>
+        <div>Feburary 25, Las Vegas</div>
       </div>
       <div className="header__avatar-logo">
         <div>
@@ -18,7 +18,7 @@ const Header = ({ onCreateModal }) => {
             onClick={onCreateModal}
             className="header__button"
           >
-            +Add New Clothes
+            + Add New Clothes
           </button>
         </div>
         <div>Terrence Tegegne</div>
