@@ -2,4 +2,6 @@
   display: flex;
   justify-content: space-between;
   margin: 171px 40px 24px;
+  font-size: 18px;
+  font-family: "CabinetGrotesk-Medium", serif;
 }
