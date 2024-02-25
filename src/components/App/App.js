@@ -86,6 +86,3 @@ function App() {
 }
 
 export default App;
-
-//SUBMIT ITEM CARD FUNCTIONALITY
-// CLEAN UP CODE
