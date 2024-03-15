@@ -2,7 +2,8 @@ import "./Main.css";
 import { defaultClothingItems } from "../../utils/constants";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
-import { useMemo } from "react";
+import { useMemo, useContext } from "react";
+import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 
 function Main({ weatherTemp, onSelectCard }) {
   const weatherType = useMemo(() => {
@@ -19,11 +20,19 @@ function Main({ weatherTemp, onSelectCard }) {
     return item.weather.toLowerCase() === weatherType;
   });
 
+  const { currentTempUnit, handleToggleSwitch } = useContext(
+    CurrentTempUnitContext
+  );
+
   return (
     <main className="main">
-      <WeatherCard day={true} type="cloudy" weatherTemp={`${weatherTemp}°F`} />
+      <WeatherCard
+        day={true}
+        type="cloudy"
+        weatherTemp={`${weatherTemp}°${currentTempUnit}`}
+      />
       <section className="card__section" id="card-section">
-        Today is {`${weatherTemp}°F`} / You may want to wear:
+        Today is {`${weatherTemp}°${currentTempUnit}`} / You may want to wear:
         <div className="card__items">
           {filteredCards.map((item) => (
             <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
