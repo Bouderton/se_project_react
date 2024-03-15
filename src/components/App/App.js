@@ -4,6 +4,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
+import SideBar from "../Profile/SideBar";
 import { useState, useEffect } from "react";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
@@ -54,7 +55,9 @@ function App() {
           <Route exact path="/">
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
-          <Route path="/profile">Profile</Route>
+          <Route path="/profile">
+            <SideBar />
+          </Route>
         </Switch>
         <Footer />
         {activeModal === "create" && (
