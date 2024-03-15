@@ -6,12 +6,15 @@ import { useMemo, useContext } from "react";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 
 function Main({ weatherTemp, onSelectCard }) {
+  const { currentTempUnit } = useContext(CurrentTempUnitContext);
+
+  const temp = weatherTemp?.temperature?.[currentTempUnit] || 999;
   const weatherType = useMemo(() => {
-    if (weatherTemp >= 86) {
+    if (temp >= 86) {
       return "hot";
-    } else if (weatherTemp >= 66 && weatherTemp <= 85) {
+    } else if (temp >= 66 && temp <= 85) {
       return "warm";
-    } else if (weatherTemp <= 65) {
+    } else if (temp <= 65) {
       return "cold";
     }
   }, [weatherTemp]);
@@ -20,19 +23,15 @@ function Main({ weatherTemp, onSelectCard }) {
     return item.weather.toLowerCase() === weatherType;
   });
 
-  const { currentTempUnit, handleToggleSwitch } = useContext(
-    CurrentTempUnitContext
-  );
-
   return (
     <main className="main">
       <WeatherCard
         day={true}
         type="cloudy"
-        weatherTemp={`${weatherTemp}°${currentTempUnit}`}
+        weatherTemp={`${temp}°${currentTempUnit}`}
       />
       <section className="card__section" id="card-section">
-        Today is {`${weatherTemp}°${currentTempUnit}`} / You may want to wear:
+        Today is {`${temp}°${currentTempUnit}`} / You may want to wear:
         <div className="card__items">
           {filteredCards.map((item) => (
             <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />

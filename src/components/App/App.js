@@ -48,7 +48,7 @@ function App() {
       <CurrentTempUnitContext.Provider
         value={{ currentTempUnit, handleToggleSwitch }}
       >
-        <Header onCreateModal={handleCreateModal} />
+        <Header onCreateModal={handleCreateModal} temp={temp} />
         <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
 
         <Footer />

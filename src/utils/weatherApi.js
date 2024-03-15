@@ -22,8 +22,16 @@ export const getForecast = () => {
 export const parseWeatherData = (data) => {
   const main = data.main;
   const temp = main && main.temp;
+  const weather = {
+    temperature: { F: `${Math.round(temp)}°F` },
+    C: `${Math.round(temp - (32 * 5) / 9)}°C`,
+  };
+  console.log(weather);
   return Math.ceil(temp);
 };
+
+// weather.temperature.F = `${Math.round(data.main.temp)}°F`;
+// weather.temperature.C = `${Math.round((data.main.temp - 32) * 5/9)}°C`;
 
 // const response = {
 //   coord: {
