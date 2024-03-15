@@ -23,11 +23,13 @@ export const parseWeatherData = (data) => {
   const main = data.main;
   const temp = main && main.temp;
   const weather = {
-    temperature: { F: `${Math.round(temp)}°F` },
-    C: `${Math.round(temp - (32 * 5) / 9)}°C`,
+    temperature: {
+      F: `${Math.round(temp)}`,
+      C: `${Math.round(temp - (32 * 5) / 9)}`,
+    },
   };
   console.log(weather);
-  return Math.ceil(temp);
+  return weather;
 };
 
 // weather.temperature.F = `${Math.round(data.main.temp)}°F`;
