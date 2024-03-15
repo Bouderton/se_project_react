@@ -9,6 +9,7 @@ function Main({ weatherTemp, onSelectCard }) {
   const { currentTempUnit } = useContext(CurrentTempUnitContext);
 
   const temp = weatherTemp?.temperature?.[currentTempUnit] || 999;
+  console.log(temp);
   const weatherType = useMemo(() => {
     if (temp >= 86) {
       return "hot";
