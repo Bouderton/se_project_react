@@ -28,7 +28,8 @@ function App() {
   };
 
   const handleToggleSwitch = () => {
-    // currently empty
+    if (currentTempUnit === "C") setCurrentTempUnit("F");
+    if (currentTempUnit === "F") setCurrentTempUnit("C");
   };
 
   useEffect(() => {

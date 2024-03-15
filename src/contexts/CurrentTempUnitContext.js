@@ -1,6 +1,8 @@
 import React from "react";
 
-export const CurrentTempUnitContext = React.createContext({
+const CurrentTempUnitContext = React.createContext({
   currentTempUnit: "",
   handleToggleSwitch: () => {},
 });
+
+export { CurrentTempUnitContext };
