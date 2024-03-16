@@ -4,18 +4,18 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
-import SideBar from "../Profile/SideBar";
 import { useState, useEffect } from "react";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
-import ClothingSection from "../Profile/ClothesSection";
+import Profile from "../Profile/Profile";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCreateModal = () => {
     setActiveModal("create");
@@ -57,8 +57,11 @@ function App() {
             <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
           </Route>
           <Route path="/profile">
-            <SideBar />
-            <ClothingSection />
+            <Profile
+              clothingItems={clothingItems}
+              handleCreateModal={handleCreateModal}
+              // onSelectCard={onSelectCard}
+            />
           </Route>
         </Switch>
         <Footer />
