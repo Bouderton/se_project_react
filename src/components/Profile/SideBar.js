@@ -4,8 +4,10 @@ import "./SideBar.css";
 const SideBar = () => {
   return (
     <div className="sidebar">
-      <img src={avatar} alt="avater logo" />
-      <p className="sidebar__profile-text">Terrence Tegegne</p>
+      <div className="sidebar__container">
+        <img src={avatar} alt="avater logo" />
+        <p className="sidebar__profile-text">Terrence Tegegne</p>
+      </div>
     </div>
   );
 };

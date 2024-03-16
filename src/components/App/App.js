@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import ClothingSection from "../Profile/ClothesSection";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -57,6 +58,7 @@ function App() {
           </Route>
           <Route path="/profile">
             <SideBar />
+            <ClothingSection />
           </Route>
         </Switch>
         <Footer />
