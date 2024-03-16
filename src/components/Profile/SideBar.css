@@ -1,0 +1,13 @@
+.sidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 47px 20px auto;
+  gap: 15px;
+}
+
+.sidebar__profile-text {
+  font-family: "CabinetGrotesk-Medium", serif;
+  font-size: 20px;
+  font-weight: 700;
+}
