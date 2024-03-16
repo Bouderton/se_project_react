@@ -1,5 +1,6 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
+
 const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
     // declare state for each input field
   
@@ -13,12 +14,11 @@ const AddItemModal = ({ isOpen, onAddItem, onCloseModal }) => {
       // call onAddItem with appropriate arguments
     }
   
-    return (
-      {/* don't forget to pass appropriate props to ModalWithForm */}
-      <ModalWithForm>
-        {/* the contents of the form will go in here */}
-      </ModalWithForm>
-    );
+   
+    //  Pass appropiate props to ModalWithForm
+    //  ModalWithForm
+    //    Form contents
+    
   };
   
   export default AddItemModal;
