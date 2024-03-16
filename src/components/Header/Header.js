@@ -31,7 +31,12 @@ const Header = ({ onCreateModal }) => {
             + Add New Clothes
           </button>
         </div>
-        <Link to="/profile">Terrence Tegegne</Link>
+        <Link
+          to="/profile"
+          style={{ textDecoration: "none", color: " inherit" }}
+        >
+          Terrence Tegegne
+        </Link>
         <div>
           <img src={avatar} alt="avatar log" />
         </div>

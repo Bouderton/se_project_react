@@ -11,6 +11,7 @@
   color: #00000099;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .profile__clothes-title {
