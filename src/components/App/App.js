@@ -46,6 +46,7 @@ function App() {
       });
   }, []);
 
+
   return (
     <div>
       <CurrentTempUnitContext.Provider
@@ -60,7 +61,7 @@ function App() {
             <Profile
               clothingItems={clothingItems}
               handleCreateModal={handleCreateModal}
-              // onSelectCard={onSelectCard}
+              onSelectCard={handleCreateModal}
             />
           </Route>
         </Switch>

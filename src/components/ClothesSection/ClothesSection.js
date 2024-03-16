@@ -1,6 +1,6 @@
 import ItemCard from "../ItemCard/ItemCard";
 
-const ClothingSection = ({
+const ClothesSection = ({
   clothingItems,
   handleCreateModal,
   onSelectCard,
@@ -28,4 +28,4 @@ const ClothingSection = ({
   );
 };
 
-export default ClothingSection;
+export default ClothesSection;
