@@ -20,4 +20,8 @@
 
 @import url("./components/SideBar/SideBar.css");
 
+@import url("./components/Profile/Profile.css");
+
+@import url("./components/ClothesSection/ClothesSection.css");
+
 @import url("./vendor/fonts.css");

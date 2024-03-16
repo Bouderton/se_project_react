@@ -1,0 +1,20 @@
+.profile__clothes-text-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.profile__clothes-add-button {
+  font-family: "CabinetGrotesk-Medium", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #00000099;
+  background: none;
+  border: none;
+}
+
+.profile__clothes-title {
+  font-family: "CabinetGrotesk-Medium", serif;
+  font-size: 16px;
+  font-weight: 700;
+}

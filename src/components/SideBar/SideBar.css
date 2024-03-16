@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: flex-start;
   text-align: center;
-  margin: 47px 20px auto;
+  margin: 0 20px auto;
   gap: 15px;
   /* height: 100vh; */
 }

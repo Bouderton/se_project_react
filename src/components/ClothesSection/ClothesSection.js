@@ -7,7 +7,7 @@ const ClothingSection = ({
 }) => {
   return (
     <section className="profile__clothes-section">
-      <div>
+      <div className="profile__clothes-text-container">
         <p className="profile__clothes-title">Your Items</p>
         <button
           type="text"
