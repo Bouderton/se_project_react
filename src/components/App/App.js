@@ -9,6 +9,7 @@ import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTempUnitContext";
 import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
 import Profile from "../Profile/Profile";
+import api from "../../utils/api";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -45,6 +46,17 @@ function App() {
         alert(`${err} Failed to get weather forecast`);
       });
   }, []);
+
+  useEffect(() => {
+    api
+    .getItems()
+    .then((items => {
+      console.log(items);
+      setClothingItems(items);
+    })).catch((err) => {
+      console.log(`${err}`)
+    })
+  }, [])
 
 
   return (
