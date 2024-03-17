@@ -75,8 +75,8 @@
   height: 20px;
   border: none;
   position: relative;
-  top: 0;
-  left: 470px;
+  top: -10px;
+  left: 480px;
 }
 
 .modal__close-button:hover {

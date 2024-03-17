@@ -20,7 +20,7 @@ const postItems = () => {
 };
 
 const deleteItems = () => {
-  return fetch(`${baseUrl}/items}`, {
+  return fetch(`${baseUrl}/items/:id}`, {
     method: "DELETE",
   }).then((res) => checkResponse(res));
 };
