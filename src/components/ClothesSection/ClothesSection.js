@@ -1,10 +1,6 @@
 import ItemCard from "../ItemCard/ItemCard";
 
-const ClothesSection = ({
-  clothingItems,
-  handleCreateModal,
-  onSelectCard,
-}) => {
+const ClothesSection = ({ clothingItems, handleCreateModal, onSelectCard }) => {
   return (
     <section className="profile__clothes-section">
       <div className="profile__clothes-text-container">
