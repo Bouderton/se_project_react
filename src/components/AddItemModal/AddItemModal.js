@@ -36,6 +36,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
     // prevent default behavior
     e.preventDefault();
     // call onAddItem with appropriate arguments
+    debugger;
     handleAddItem({ name, weather, imageUrl });
   }
 

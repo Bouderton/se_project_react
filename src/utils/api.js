@@ -20,9 +20,9 @@ const addItem = ({ name, weather, imageUrl }) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name,
-      weather,
-      imageUrl,
+      name: name,
+      weather: weather,
+      imageUrl: imageUrl,
     }),
   }).then((res) => checkResponse(res));
 };

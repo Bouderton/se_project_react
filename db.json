@@ -107,6 +107,18 @@
       "weather": "",
       "imageUrl": "",
       "_id": 17
+    },
+    {
+      "name": "name",
+      "weather": "weather",
+      "imageUrl": "imageUrl",
+      "_id": 18
+    },
+    {
+      "name": "",
+      "weather": "",
+      "imageUrl": "",
+      "_id": 19
     }
   ]
 }
