@@ -1,8 +1,17 @@
 import "./ModalWithForm.css";
 
-const ModalWithForm = ({ children, buttonText, title, onClose, name }) => {
+const ModalWithForm = ({
+  children,
+  buttonText,
+  title,
+  onClose,
+  name,
+  isOpen,
+}) => {
   return (
-    <div className={`modal modal__type_${name}`}>
+    <div
+      className={`modal modal__type_${name} ${isOpen ? " modal__opened" : ""}`}
+    >
       <div className="modal__content">
         <button
           type="button"
