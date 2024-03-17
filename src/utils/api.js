@@ -13,12 +13,17 @@ const getItems = () => {
   }).then((res) => checkResponse(res));
 };
 
-const addItem = () => {
+const addItem = ({ name, weather, imageUrl }) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      name,
+      weather,
+      imageUrl,
+    }),
   }).then((res) => checkResponse(res));
 };
 
