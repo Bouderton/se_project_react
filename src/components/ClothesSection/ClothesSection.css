@@ -19,3 +19,11 @@
   font-size: 18px;
   font-weight: 700;
 }
+
+.profile__clothes-items {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
