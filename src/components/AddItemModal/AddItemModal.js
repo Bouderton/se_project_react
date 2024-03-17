@@ -5,7 +5,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
   // declare state for each input field
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
-  const [temp, setTemp] = useState("");
+  const [weather, setTemp] = useState("");
 
   // use a useEffect hook to reset the input field state to empty strings when
   // the modal is opened
@@ -36,7 +36,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
     // prevent default behavior
     e.preventDefault();
     // call onAddItem with appropriate arguments
-    handleAddItem({ name, imageUrl });
+    handleAddItem({ name, weather, imageUrl });
   }
 
   //  Pass appropiate props to ModalWithForm
@@ -45,6 +45,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
     <ModalWithForm
       title="New Garmet"
       onClose={handleCloseModal}
+      onSubmit={handleSubmit}
       buttonText="Add garment"
       isOpen={isOpen}
     >

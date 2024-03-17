@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemModal from "../ItemModal/ItemModal";
 import { useState, useEffect } from "react";
@@ -30,6 +29,16 @@ function App() {
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
     setSelectedCard(card);
+  };
+
+  const handleItemSubmit = ({ name, weather, imageUrl }) => {
+    api
+      .addItem({ name, weather, imageUrl })
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
   };
 
   const handleToggleSwitch = () => {
@@ -77,6 +86,7 @@ function App() {
             <Profile
               clothingItems={clothingItems}
               onSelectCard={handleSelectedCard}
+              handleCreateModal={handleCreateModal}
             />
           </Route>
         </Switch>
@@ -85,6 +95,7 @@ function App() {
           <AddItemModal
             isOpen={activeModal === "create"}
             handleCloseModal={handleCloseModal}
+            handleAddItem={handleItemSubmit}
           />
           // <ModalWithForm
           //   title="New Garmet"

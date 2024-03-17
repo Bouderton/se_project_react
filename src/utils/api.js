@@ -13,22 +13,28 @@ const getItems = () => {
   }).then((res) => checkResponse(res));
 };
 
-const postItems = () => {
+const addItem = () => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
   }).then((res) => checkResponse(res));
 };
 
-const deleteItems = () => {
+const deleteItem = () => {
   return fetch(`${baseUrl}/items/:id}`, {
     method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
   }).then((res) => checkResponse(res));
 };
 
 const api = {
   getItems,
-  postItems,
-  deleteItems,
+  addItem,
+  deleteItem,
 };
 
 export default api;
