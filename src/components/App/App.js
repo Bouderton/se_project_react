@@ -49,15 +49,15 @@ function App() {
 
   useEffect(() => {
     api
-    .getItems()
-    .then((items => {
-      console.log(items);
-      setClothingItems(items);
-    })).catch((err) => {
-      console.log(`${err}`)
-    })
-  }, [])
-
+      .getItems()
+      .then((items) => {
+        console.log(items);
+        setClothingItems(items);
+      })
+      .catch((err) => {
+        console.log(`${err}`);
+      });
+  }, []);
 
   return (
     <div>
@@ -67,7 +67,11 @@ function App() {
         <Header onCreateModal={handleCreateModal} temp={temp} />
         <Switch>
           <Route exact path="/">
-            <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
+            <Main
+              weatherTemp={temp}
+              onSelectCard={handleSelectedCard}
+              clothingItems={clothingItems}
+            />
           </Route>
           <Route path="/profile">
             <Profile
