@@ -10,8 +10,15 @@ const ItemModal = ({ selectedCard, onClose, isOpen }) => {
           className="modal__close-button"
         ></button>
         <img src={selectedCard.imageUrl} />
-        <div>{selectedCard.name}</div>
-        <div>Weather Type: {selectedCard.weather}</div>
+        <div className="modal__info-container">
+          <div className="modal__image-info">
+            {selectedCard.name}
+            <span>Weather Type: {selectedCard.weather}</span>
+          </div>
+          <button className="modal__delete-button" type="text">
+            Delete Item
+          </button>
+        </div>
       </div>
     </div>
   );
