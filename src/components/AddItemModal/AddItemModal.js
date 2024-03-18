@@ -28,7 +28,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
       setImageUrl("");
       setTemp("");
     }
-  });
+  }, [isOpen]);
 
   // create onChange handlers corresponding to each state variable
 
@@ -36,7 +36,6 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
     // prevent default behavior
     e.preventDefault();
     // call onAddItem with appropriate arguments
-    debugger;
     handleAddItem({ name, weather, imageUrl });
   }
 
