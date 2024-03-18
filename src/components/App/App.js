@@ -31,6 +31,20 @@ function App() {
     setSelectedCard(card);
   };
 
+  const handleDeleteItem = (selectedCard) => {
+    api
+      .deleteItem(selectedCard._id)
+      .then(() => {
+        clothingItems.filter((card) => {
+          return card._id !== selectedCard._id;
+        });
+        handleCloseModal();
+      })
+      .catch((err) => {
+        console.log(`${err}`);
+      });
+  };
+
   const handleItemSubmit = ({ name, weather, imageUrl }) => {
     api
       .addItem({ name, weather, imageUrl })
@@ -100,6 +114,7 @@ function App() {
           selectedCard={selectedCard}
           onClose={handleCloseModal}
           isOpen={activeModal === "preview"}
+          deleteCard={handleDeleteItem}
         />
       </CurrentTempUnitContext.Provider>
     </div>
