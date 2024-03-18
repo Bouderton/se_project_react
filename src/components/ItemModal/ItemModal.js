@@ -1,6 +1,9 @@
 import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, isOpen, deleteCard }) => {
+  const handleDelete = () => {
+    deleteCard(selectedCard);
+  };
   return (
     <div className={`modal ${isOpen ? " modal__opened" : ""}`}>
       <div className="modal__content">
@@ -18,7 +21,7 @@ const ItemModal = ({ selectedCard, onClose, isOpen, deleteCard }) => {
           <button
             className="modal__delete-button"
             type="text"
-            onClick={deleteCard}
+            onClick={handleDelete}
           >
             Delete Item
           </button>
