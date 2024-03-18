@@ -1,6 +1,6 @@
 import "./ItemModal.css";
 
-const ItemModal = ({ selectedCard, onClose }) => {
+const ItemModal = ({ selectedCard, onClose, isOpen }) => {
   return (
     <div className={"modal"}>
       <div className="modal__content">
