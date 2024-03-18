@@ -2,7 +2,7 @@ import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, isOpen }) => {
   return (
-    <div className={"modal"}>
+    <div className={`modal ${isOpen ? " modal__opened" : ""}`}>
       <div className="modal__content">
         <button
           type="button"

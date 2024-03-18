@@ -96,9 +96,11 @@ function App() {
           handleCloseModal={handleCloseModal}
           handleAddItem={handleItemSubmit}
         />
-        {activeModal === "preview" && (
-          <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
-        )}
+        <ItemModal
+          selectedCard={selectedCard}
+          onClose={handleCloseModal}
+          isOpen={activeModal === "preview"}
+        />
       </CurrentTempUnitContext.Provider>
     </div>
   );
