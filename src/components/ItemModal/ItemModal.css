@@ -50,3 +50,7 @@
   cursor: pointer;
   padding: 0;
 }
+
+.modal__image {
+  max-width: 500px;
+}
