@@ -1,8 +1,8 @@
-const baseUrl = "http://localhost:3001";
-
-const checkResponse = (res) => {
+export const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error ${res.status}`);
 };
+
+const baseUrl = "http://localhost:3001";
 
 const getItems = () => {
   return fetch(`${baseUrl}/items`, {
@@ -10,7 +10,7 @@ const getItems = () => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => checkResponse(res));
+  }).then(checkResponse);
 };
 
 const addItem = ({ name, weather, imageUrl }) => {
@@ -24,7 +24,7 @@ const addItem = ({ name, weather, imageUrl }) => {
       weather: weather,
       imageUrl: imageUrl,
     }),
-  }).then((res) => checkResponse(res));
+  }).then(checkResponse);
 };
 
 const deleteItem = ({ _id }) => {
@@ -33,7 +33,7 @@ const deleteItem = ({ _id }) => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((res) => checkResponse(res));
+  }).then(checkResponse);
 };
 
 const api = {

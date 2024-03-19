@@ -42,7 +42,7 @@ function App() {
         handleCloseModal();
       })
       .catch((err) => {
-        console.log(`${err}`);
+        console.log(err);
       });
   };
 
@@ -57,8 +57,7 @@ function App() {
   };
 
   const handleToggleSwitch = () => {
-    if (currentTempUnit === "C") setCurrentTempUnit("F");
-    if (currentTempUnit === "F") setCurrentTempUnit("C");
+    setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
   };
 
   useEffect(() => {
