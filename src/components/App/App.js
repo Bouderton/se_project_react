@@ -33,11 +33,12 @@ function App() {
 
   const handleDeleteItem = (selectedCard) => {
     api
-      .deleteItem(selectedCard._id)
+      .deleteItem(selectedCard)
       .then(() => {
-        clothingItems.filter((card) => {
+        const postDelete = clothingItems.filter((card) => {
           return card._id !== selectedCard._id;
         });
+        setClothingItems(postDelete);
         handleCloseModal();
       })
       .catch((err) => {
