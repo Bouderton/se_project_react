@@ -1,6 +1,6 @@
 @import url("./vendor/noramlize.css");
 
-@import url("./components/App/App.css");
+/* @import url("./components/App/App.css"); */
 
 @import url("./components/Header/Header.css");
 
@@ -26,4 +26,4 @@
 
 @import url("./vendor/fonts.css");
 
-@import url("./components/RegisterModal/RegisterModal.css");
+/* @import url("./components/RegisterModal/RegisterModal.css"); */

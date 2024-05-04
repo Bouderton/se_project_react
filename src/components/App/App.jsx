@@ -8,7 +8,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import { useState, useEffect } from "react";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import { Switch, Route } from "react-router-dom/cjs/react-router-dom.min";
+import { Route, Routes } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import api from "../../utils/api";
 
@@ -89,22 +89,29 @@ function App() {
         value={{ currentTempUnit, handleToggleSwitch }}
       >
         <Header onCreateModal={handleCreateModal} temp={temp} />
-        <Switch>
-          <Route exact path="/">
-            <Main
-              weatherTemp={temp}
-              onSelectCard={handleSelectedCard}
-              clothingItems={clothingItems}
-            />
-          </Route>
-          <Route path="/profile">
-            <Profile
-              clothingItems={clothingItems}
-              onSelectCard={handleSelectedCard}
-              handleCreateModal={handleCreateModal}
-            />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Main
+                weatherTemp={temp}
+                onSelectCard={handleSelectedCard}
+                clothingItems={clothingItems}
+              />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <Profile
+                clothingItems={clothingItems}
+                onSelectCard={handleSelectedCard}
+                handleCreateModal={handleCreateModal}
+              />
+            }
+          />
+        </Routes>
         <Footer />
         <AddItemModal
           isOpen={activeModal === "create"}
