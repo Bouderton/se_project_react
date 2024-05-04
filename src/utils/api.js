@@ -2,7 +2,7 @@ export const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error ${res.status}`);
 };
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = "localhost:27017";
 
 const getItems = () => {
   return fetch(`${baseUrl}/items`, {
@@ -35,6 +35,8 @@ const deleteItem = ({ _id }) => {
     },
   }).then(checkResponse);
 };
+
+// ADD SIGNIN AND SIGNUP FETCHES
 
 const api = {
   getItems,

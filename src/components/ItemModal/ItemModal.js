@@ -11,7 +11,7 @@ const ItemModal = ({ selectedCard, onClose, isOpen, deleteCard }) => {
           type="button"
           onClick={onClose}
           className="modal__close-button"
-        ></button>
+        />
         <img className="modal__image" src={selectedCard.imageUrl} />
         <div className="modal__info-container">
           <div className="modal__image-info">

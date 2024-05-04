@@ -4,6 +4,7 @@ import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemModal from "../ItemModal/ItemModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
 import { useState, useEffect } from "react";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
@@ -115,6 +116,10 @@ function App() {
           onClose={handleCloseModal}
           isOpen={activeModal === "preview"}
           deleteCard={handleDeleteItem}
+        />
+        <RegisterModal
+          isOpen={activeModal === "create"}
+          handleCloseModal={handleCloseModal}
         />
       </CurrentTempUnitContext.Provider>
     </div>
