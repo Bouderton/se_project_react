@@ -2,7 +2,7 @@ import "./Header.css";
 import avatar from "../../images/avatar-logo.svg";
 import logo from "../../images/wtwr.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 
 const Header = ({ onCreateModal }) => {
   const currentDate = new Date().toLocaleString("default", {
@@ -38,7 +38,7 @@ const Header = ({ onCreateModal }) => {
           Terrence Tegegne
         </Link>
         <div>
-          <img src={avatar} alt="avatar log" />
+          <img src={avatar} alt="avatar logo" />
         </div>
       </div>
     </header>
