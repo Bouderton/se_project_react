@@ -1,61 +1,97 @@
 export const weatherOptions = [
   {
-    url: "/se_project_react/src/images/day/day-sunny.svg",
+    url: new URL(
+      "/se_project_react/src/images/day/day-sunny.svg",
+      import.meta.url
+    ).href,
     day: true,
     type: "sunny",
   },
   {
-    url: "/se_project_react/src/images/day/day-cloudy.svg",
+    url: new URL(
+      "/se_project_react/src/images/day/day-cloudy.svg",
+      import.meta.url
+    ).href,
     day: true,
     type: "cloudy",
   },
   {
-    url: "/se_project_react/src/images/day/day-rain.svg",
+    url: new URL(
+      "/se_project_react/src/images/day/day-rain.svg",
+      import.meta.url
+    ).href,
     day: true,
     type: "rainy",
   },
   {
-    url: "/se_project_react/src/images/day/day-storm.svg",
+    url: new URL(
+      "/se_project_react/src/images/day/day-storm.svg",
+      import.meta.url
+    ).href,
     day: true,
     type: "storm",
   },
   {
-    url: "/se_project_react/src/images/day/day-snow.svg",
+    url: new URL(
+      "/se_project_react/src/images/day/day-snow.svg",
+      import.meta.url
+    ).href,
     day: true,
     type: "snowy",
   },
   {
-    url: "/se_project_react/src/images/day/day-fog.svg",
+    url: new URL(
+      "/se_project_react/src/images/day/day-fog.svg",
+      import.meta.url
+    ).href,
     day: true,
     type: "fog",
   },
   {
-    url: "/se_project_react/src/images/night/night-moon.svg",
+    url: new URL(
+      "/se_project_react/src/images/night/night-moon.svg",
+      import.meta.url
+    ).href,
     day: false,
     type: "moon",
   },
   {
-    url: "/se_project_react/src/images/night/night-cloudy.svg",
+    url: new URL(
+      "/se_project_react/src/images/night/night-cloudy.svg",
+      import.meta.url
+    ).href,
     day: false,
     type: "cloudy",
   },
   {
-    url: "/se_project_react/src/images/night/night-rain.svg",
+    url: new URL(
+      "/se_project_react/src/images/night/night-rain.svg",
+      import.meta.url
+    ).href,
     day: false,
     type: "rainy",
   },
   {
-    url: "/se_project_react/src/images/night/night-storm.svg",
+    url: new URL(
+      "/se_project_react/src/images/night/night-storm.svg",
+      import.meta.url
+    ).href,
     day: false,
     type: "storm",
   },
   {
-    url: "/se_project_react/src/images/night/night-snow.svg",
+    url: new URL(
+      "/se_project_react/src/images/night/night-snow.svg",
+      import.meta.url
+    ).href,
     day: false,
     type: "snowy",
   },
   {
-    url: "/se_project_react/src/images/night/night-fog.svg",
+    url: new URL(
+      "/se_project_react/src/images/night/night-fog.svg",
+      import.meta.url
+    ).href,
     day: false,
     type: "fog",
   },

@@ -2,7 +2,7 @@ export const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error ${res.status}`);
 };
 
-const baseUrl = "localhost:27017";
+const baseUrl = "http://localhost:3001";
 
 const getItems = () => {
   return fetch(`${baseUrl}/items`, {
