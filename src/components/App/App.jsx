@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemModal from "../ItemModal/ItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import LoginModal from "../LoginModal/LoginModal";
 import { useState, useEffect } from "react";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
@@ -34,6 +35,10 @@ function App() {
 
   const handleSignUp = () => {
     setActiveModal("signup");
+  };
+
+  const handleLogin = () => {
+    setActiveModal("login");
   };
 
   const handleDeleteItem = (selectedCard) => {
@@ -96,6 +101,7 @@ function App() {
           onCreateModal={handleCreateModal}
           temp={temp}
           handleSignUp={handleSignUp}
+          handleLogin={handleLogin}
         />
         <Routes>
           <Route
@@ -136,6 +142,11 @@ function App() {
           isOpen={activeModal === "signup"}
           handleCloseModal={handleCloseModal}
           handleSignUp={handleSignUp}
+        />
+        <LoginModal
+          isOpen={activeModal === "login"}
+          handleCloseModal={handleCloseModal}
+          handleLogin={handleLogin}
         />
       </CurrentTempUnitContext.Provider>
     </div>

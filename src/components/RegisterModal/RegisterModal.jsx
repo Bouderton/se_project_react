@@ -1,7 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
-const RegisterModal = ({ isOpen, handleCloseModal, handleSignUp }) => {
+const RegisterModal = ({ isOpen, handleCloseModal }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -62,7 +62,7 @@ const RegisterModal = ({ isOpen, handleCloseModal, handleSignUp }) => {
           value={email}
         />
       </label>
-      <label classname="modal__form-label">
+      <label className="modal__form-label">
         Password
         <input
           type="text"
@@ -75,7 +75,8 @@ const RegisterModal = ({ isOpen, handleCloseModal, handleSignUp }) => {
           value={password}
         />
       </label>
-      <label classname="modal__form-label">
+      {/* FIX WEIRD LABEL CSS */}
+      <label className="modal__form-label">
         Name
         <input
           type="text"
@@ -88,7 +89,7 @@ const RegisterModal = ({ isOpen, handleCloseModal, handleSignUp }) => {
           value={name}
         />
       </label>
-      <label classname="modal__form-label">
+      <label className="modal__form-label">
         Avatar
         <input
           type="url"
