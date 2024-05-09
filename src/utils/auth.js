@@ -19,5 +19,3 @@ export const signIn = () => {
     body: JSON.stringify({ email, password }),
   });
 };
-
-console.log(baseUrl);

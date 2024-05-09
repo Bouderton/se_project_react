@@ -67,6 +67,16 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleSignUp = ({ name, email, password, avatar }) => {
+    auth
+      .signUp({ name, avatar, password, email })
+      .then(() => {
+        handleSignUpModal({ name, email, password, avatar });
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
+  };
+
   const handleToggleSwitch = () => {
     setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
   };
@@ -143,6 +153,7 @@ function App() {
           isOpen={activeModal === "signup"}
           handleCloseModal={handleCloseModal}
           handleSignUpModal={handleSignUpModal}
+          handleSignUp={handleSignUp}
         />
         <LoginModal
           isOpen={activeModal === "login"}
