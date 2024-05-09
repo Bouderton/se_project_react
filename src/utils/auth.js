@@ -1,6 +1,6 @@
 import baseUrl from "./api";
 
-export const signUp = (name, email, avatar, password) => {
+export const signUp = ({ name, email, avatar, password }) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
