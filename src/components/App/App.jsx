@@ -32,6 +32,10 @@ function App() {
     setSelectedCard(card);
   };
 
+  const handleSignUp = () => {
+    setActiveModal("signup");
+  };
+
   const handleDeleteItem = (selectedCard) => {
     api
       .deleteItem(selectedCard)
@@ -88,7 +92,11 @@ function App() {
       <CurrentTempUnitContext.Provider
         value={{ currentTempUnit, handleToggleSwitch }}
       >
-        <Header onCreateModal={handleCreateModal} temp={temp} />
+        <Header
+          onCreateModal={handleCreateModal}
+          temp={temp}
+          handleSignUp={handleSignUp}
+        />
         <Routes>
           <Route
             exact
@@ -125,8 +133,9 @@ function App() {
           deleteCard={handleDeleteItem}
         />
         <RegisterModal
-          isOpen={activeModal === "create"}
+          isOpen={activeModal === "signup"}
           handleCloseModal={handleCloseModal}
+          handleSignUp={handleSignUp}
         />
       </CurrentTempUnitContext.Provider>
     </div>
