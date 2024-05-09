@@ -12,6 +12,7 @@ import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitCon
 import { Route, Routes } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import api from "../../utils/api";
+import * as auth from "../../utils/auth";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -33,11 +34,11 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleSignUp = () => {
+  const handleSignUpModal = () => {
     setActiveModal("signup");
   };
 
-  const handleLogin = () => {
+  const handleLoginModal = () => {
     setActiveModal("login");
   };
 
@@ -100,8 +101,8 @@ function App() {
         <Header
           onCreateModal={handleCreateModal}
           temp={temp}
-          handleSignUp={handleSignUp}
-          handleLogin={handleLogin}
+          handleSignUpModal={handleSignUpModal}
+          handleLoginModal={handleLoginModal}
         />
         <Routes>
           <Route
@@ -141,12 +142,12 @@ function App() {
         <RegisterModal
           isOpen={activeModal === "signup"}
           handleCloseModal={handleCloseModal}
-          handleSignUp={handleSignUp}
+          handleSignUpModal={handleSignUpModal}
         />
         <LoginModal
           isOpen={activeModal === "login"}
           handleCloseModal={handleCloseModal}
-          handleLogin={handleLogin}
+          handleLoginModal={handleLoginModal}
         />
       </CurrentTempUnitContext.Provider>
     </div>

@@ -42,6 +42,7 @@ const api = {
   getItems,
   addItem,
   deleteItem,
+  baseUrl,
 };
 
 export default api;

@@ -4,7 +4,7 @@ import logo from "../../images/wtwr.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 
-const Header = ({ onCreateModal, handleSignUp, handleLogin }) => {
+const Header = ({ onCreateModal, handleSignUpModal, handleLoginModal }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
     day: "numeric",
@@ -37,10 +37,18 @@ const Header = ({ onCreateModal, handleSignUp, handleLogin }) => {
         >
           Terrence Tegegne
         </Link> */}
-        <button onClick={handleSignUp} type="text" className="header__button">
+        <button
+          onClick={handleSignUpModal}
+          type="text"
+          className="header__button"
+        >
           Sign Up
         </button>
-        <button onClick={handleLogin} type="text" className="header__button">
+        <button
+          onClick={handleLoginModal}
+          type="text"
+          className="header__button"
+        >
           Log In
         </button>
         {/* <div>
