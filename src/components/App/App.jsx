@@ -13,6 +13,7 @@ import { Route, Routes } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import api from "../../utils/api";
 import * as auth from "../../utils/auth";
+import { setToken, getToken } from "../../utils/token";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -20,7 +21,13 @@ function App() {
   const [temp, setTemp] = useState(0);
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
+  const handleToggleSwitch = () => {
+    setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
+  };
+
+  // Modal Handlers
   const handleCreateModal = () => {
     setActiveModal("create");
   };
@@ -41,6 +48,8 @@ function App() {
   const handleLoginModal = () => {
     setActiveModal("login");
   };
+
+  // Item Handlers
 
   const handleDeleteItem = (selectedCard) => {
     api
@@ -67,20 +76,25 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  // Authorization Handlers
+
   const handleSignUp = ({ name, email, password, avatar }) => {
+    if (!email || !password) {
+      return;
+    }
     auth
       .signUp({ name, avatar, password, email })
-      .then(() => {
+      .then((data) => {
+        // setToken(data.jwt);
+        // setUserData(data.user);
+        // setLoggedIn(true);
         handleSignUpModal({ name, email, password, avatar });
         handleCloseModal();
       })
       .catch((err) => console.log(err));
   };
 
-  const handleToggleSwitch = () => {
-    setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
-  };
-
+  // Load page APIs
   useEffect(() => {
     getForecast()
       .then((data) => {
