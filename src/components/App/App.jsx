@@ -9,7 +9,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import { useState, useEffect } from "react";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Profile from "../Profile/Profile";
 import api from "../../utils/api";
 import * as auth from "../../utils/auth";
@@ -126,6 +126,15 @@ function App() {
         console.log(`${err}`);
       });
   }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      auth.checkToken(token).then(() => {
+        setLoggedIn(true);
+      });
+    }
+  });
 
   return (
     <div>
