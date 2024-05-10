@@ -1,7 +1,7 @@
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
-const LoginModal = ({ handleCloseModal, isOpen }) => {
+const LoginModal = ({ handleCloseModal, isOpen, handleLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,10 +18,11 @@ const LoginModal = ({ handleCloseModal, isOpen }) => {
       setEmail("");
       setPassword("");
     }
-  });
+  }, [isOpen]);
 
   function handleSubmit(e) {
     e.preventDefault();
+    handleLogin({ email, password });
   }
 
   return (
@@ -36,7 +37,7 @@ const LoginModal = ({ handleCloseModal, isOpen }) => {
         Email
         <input
           type="email"
-          name="Email"
+          name="email"
           value={email}
           minLength="1"
           maxLength="30"
@@ -49,7 +50,7 @@ const LoginModal = ({ handleCloseModal, isOpen }) => {
         Password
         <input
           type="text"
-          name="Password"
+          name="password"
           value={password}
           minLength="1"
           maxLength="30"

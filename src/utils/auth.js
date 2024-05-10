@@ -11,7 +11,7 @@ export const signUp = ({ email, password, name, avatar }) => {
   }).then(checkResponse);
 };
 
-export const signIn = () => {
+export const signIn = ({ email, password }) => {
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {

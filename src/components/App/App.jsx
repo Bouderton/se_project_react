@@ -80,7 +80,7 @@ function App() {
 
   const handleSignUp = ({ email, password, name, avatar }) => {
     if (!email || !password) {
-      return;
+      return alert("Please enter an email and password");
     }
     auth
       .signUp({ email, password, name, avatar })
@@ -89,10 +89,19 @@ function App() {
         // setUserData(data.user);
         handleSignUpModal({ email, password, name, avatar });
         setLoggedIn(true);
-        console.log("Success!");
         handleCloseModal();
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleLogin = ({ email, password }) => {
+    auth.signIn({ email, password }).then((res) => {
+      handleLoginModal({ email, password });
+      localStorage.setItem("jwt", res.token);
+      console.log(res.token);
+      console.log("user logged in");
+      handleCloseModal();
+    });
   };
 
   // useEffect APIs
@@ -168,13 +177,12 @@ function App() {
         <RegisterModal
           isOpen={activeModal === "signup"}
           handleCloseModal={handleCloseModal}
-          handleSignUpModal={handleSignUpModal}
           handleSignUp={handleSignUp}
         />
         <LoginModal
           isOpen={activeModal === "login"}
           handleCloseModal={handleCloseModal}
-          handleLoginModal={handleLoginModal}
+          handleLogin={handleLogin}
         />
       </CurrentTempUnitContext.Provider>
     </div>
@@ -182,3 +190,10 @@ function App() {
 }
 
 export default App;
+
+// TODO LIST
+// Register (DONE)
+// Login
+// Create item
+// Show items on the page
+// Delete item
