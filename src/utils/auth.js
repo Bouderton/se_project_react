@@ -1,13 +1,15 @@
 import baseUrl from "./api";
+import { checkResponse } from "./api";
 
-export const signUp = ({ name, email, avatar, password }) => {
+export const signUp = (name, email, avatar, password) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ name, avatar, email, password }),
-  });
+  }).then(checkResponse);
 };
 
 export const signIn = () => {
@@ -17,7 +19,7 @@ export const signIn = () => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  });
+  }).then(checkResponse);
 };
 
 export const checkToken = (token) => {
@@ -27,5 +29,5 @@ export const checkToken = (token) => {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-  });
+  }).then(checkResponse);
 };
