@@ -78,12 +78,12 @@ function App() {
 
   // Authorization Handlers
 
-  const handleSignUp = ({ name, email, password, avatar }) => {
+  const handleSignUp = ({ email, password, name, avatar }) => {
     if (!email || !password) {
       return;
     }
     auth
-      .signUp(name, avatar, password, email)
+      .signUp({ email, password, name, avatar })
       .then(() => {
         // setToken(data.jwt);
         // setUserData(data.user);

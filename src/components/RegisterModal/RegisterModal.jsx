@@ -76,7 +76,6 @@ const RegisterModal = ({ isOpen, handleCloseModal, handleSignUp }) => {
           value={password}
         />
       </label>
-      {/* FIX WEIRD LABEL CSS */}
       <label className="modal__form-label">
         Name
         <input
