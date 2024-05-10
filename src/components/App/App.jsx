@@ -88,8 +88,8 @@ function App() {
         // setToken(data.jwt);
         // setUserData(data.user);
         handleSignUpModal({ email, password, name, avatar });
-        setLoggedIn(true);
         handleCloseModal();
+        alert("Sign Up Successful. Please Log In");
       })
       .catch((err) => console.log(err));
   };
@@ -97,9 +97,8 @@ function App() {
   const handleLogin = ({ email, password }) => {
     auth.signIn({ email, password }).then((res) => {
       handleLoginModal({ email, password });
+      setLoggedIn(true);
       localStorage.setItem("jwt", res.token);
-      console.log(res.token);
-      console.log("user logged in");
       handleCloseModal();
     });
   };
