@@ -83,12 +83,13 @@ function App() {
       return;
     }
     auth
-      .signUp({ name, avatar, password, email })
+      .signUp(name, avatar, password, email)
       .then(() => {
         // setToken(data.jwt);
         // setUserData(data.user);
         // setLoggedIn(true);
         handleSignUpModal({ name, email, password, avatar });
+        console.log("Success!");
         handleCloseModal();
       })
       .catch((err) => console.log(err));

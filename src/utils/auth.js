@@ -1,4 +1,4 @@
-import baseUrl from "./api";
+import { baseUrl } from "./api";
 import { checkResponse } from "./api";
 
 export const signUp = (name, email, avatar, password) => {
