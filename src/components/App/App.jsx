@@ -87,8 +87,8 @@ function App() {
       .then(() => {
         // setToken(data.jwt);
         // setUserData(data.user);
-        // setLoggedIn(true);
-        handleSignUpModal({ name, email, password, avatar });
+        handleSignUpModal({ email, password, name, avatar });
+        setLoggedIn(true);
         console.log("Success!");
         handleCloseModal();
       })
