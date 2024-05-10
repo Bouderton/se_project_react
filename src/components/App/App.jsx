@@ -84,7 +84,7 @@ function App() {
     }
     auth
       .signUp({ name, avatar, password, email })
-      .then((data) => {
+      .then(() => {
         // setToken(data.jwt);
         // setUserData(data.user);
         // setLoggedIn(true);
@@ -94,7 +94,7 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  // Load page APIs
+  // useEffect APIs
   useEffect(() => {
     getForecast()
       .then((data) => {
