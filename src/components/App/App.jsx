@@ -202,6 +202,7 @@ export default App;
 // TODO LIST
 // Register (DONE)
 // Login
+// Protected Routes
 // Create item
 // Show items on the page
 // Delete item
