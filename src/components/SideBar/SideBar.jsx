@@ -15,6 +15,10 @@ const SideBar = () => {
         />
         <p className="sidebar__profile-text">{currentUser?.name}</p>
       </div>
+      <div className="sidebar__profile-data">
+        <p className="sidebar__user-text">Change Profile Data</p>
+        <p className="sidebar__user-text">Log Out</p>
+      </div>
     </div>
   );
 };
