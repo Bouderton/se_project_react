@@ -30,7 +30,7 @@ const Header = ({
         </div>
         <div>{currentDate}, Las Vegas</div>
       </div>
-      <div className="header__avatar-logo">
+      <div className="header__info-container">
         <ToggleSwitch />
         {isLoggedIn ? (
           <>
@@ -47,10 +47,14 @@ const Header = ({
               to="/profile"
               style={{ textDecoration: "none", color: "black" }}
             >
-              {currentUser.name}
+              {currentUser?.name}
             </Link>
             <div>
-              <img src={currentUser.avatar} alt="avatar logo" />
+              <img
+                src={currentUser?.avatar}
+                alt="avatar logo"
+                className="header__avatar-img"
+              />
             </div>
           </>
         ) : (

@@ -8,8 +8,12 @@ const SideBar = () => {
   return (
     <div className="sidebar">
       <div className="sidebar__container">
-        <img src={currentUser.avatar} alt="avater logo" />
-        <p className="sidebar__profile-text">{currentUser.name}</p>
+        <img
+          src={currentUser?.avatar}
+          alt="avater logo"
+          className="sidebar__avatar"
+        />
+        <p className="sidebar__profile-text">{currentUser?.name}</p>
       </div>
     </div>
   );
