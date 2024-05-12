@@ -9,6 +9,7 @@ import ItemModal from "../ItemModal/ItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import Profile from "../Profile/Profile";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 // Hooks and Routes
 import { useState, useEffect } from "react";
@@ -57,6 +58,10 @@ function App() {
 
   const handleLoginModal = () => {
     setActiveModal("login");
+  };
+
+  const handleEditProfile = () => {
+    setActiveModal("edit");
   };
 
   // Item Handlers
@@ -148,7 +153,6 @@ function App() {
         .then((res) => {
           setLoggedIn(true);
           setCurrentUser(res);
-          console.log(currentUser);
         })
         .catch((err) => console.log(err));
     }
@@ -186,6 +190,7 @@ function App() {
                   clothingItems={clothingItems}
                   onSelectCard={handleSelectedCard}
                   handleCreateModal={handleCreateModal}
+                  handleEditProfile={handleEditProfile}
                 />
               }
             />
@@ -211,6 +216,11 @@ function App() {
             isOpen={activeModal === "login"}
             handleCloseModal={handleCloseModal}
             handleLogin={handleLogin}
+          />
+          <EditProfileModal
+            isOpen={activeModal === "edit"}
+            handleCloseModal={handleCloseModal}
+            handleEditProfile={handleEditProfile}
           />
         </CurrentTempUnitContext.Provider>
       </CurrentUserContext.Provider>

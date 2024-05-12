@@ -1,9 +1,8 @@
-import avatar from "../../images/avatar-logo.svg";
 import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
-const SideBar = () => {
+const SideBar = ({ handleCreateModal, handleEditProfile }) => {
   const currentUser = useContext(CurrentUserContext);
   return (
     <div className="sidebar">
@@ -16,18 +15,19 @@ const SideBar = () => {
         <p className="sidebar__profile-text">{currentUser?.name}</p>
       </div>
       <div className="sidebar__profile-data">
-        <p className="sidebar__user-text">Change Profile Data</p>
-        <p className="sidebar__user-text">Log Out</p>
+        <button
+          type="text"
+          className="sidebar__user-button"
+          onClick={handleEditProfile}
+        >
+          Edit Profile
+        </button>
+        <button type="text" className="sidebar__user-button">
+          Log Out
+        </button>
       </div>
     </div>
   );
 };
 
 export default SideBar;
-
-// NOTES
-// ADD CLOTHING ITEMS
-// ADD CLOTHING ITEMS FROM MODAL FEATURE
-// BE ABLE TO DELETE CARDS
-// ADD NEW CARDS
-// PRAY

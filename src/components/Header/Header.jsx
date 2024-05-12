@@ -66,11 +66,7 @@ const Header = ({
             >
               Sign Up
             </button>
-            <button
-              onClick={handleLoginModal}
-              type="text"
-              className="header__button"
-            >
+            <button type="text" className="header__button">
               Log In
             </button>
           </>

@@ -13,9 +13,11 @@
   gap: 24px;
 }
 
-.sidebar__profile {
+.sidebar__profile-data {
   display: flex;
+  flex-direction: column;
   text-align: left;
+  gap: 8px;
 }
 
 .sidebar__profile-text {
@@ -25,11 +27,15 @@
   margin: 8px 0;
 }
 
-.sidebar__user-text {
-  margin: 8px auto 0;
+.sidebar__user-button {
+  margin: 0;
   font-family: "CabinetGrotesk-Medium", serif;
   font-size: 18px;
   font-weight: 700;
+  cursor: pointer;
+  border: none;
+  background: none;
+  text-align: left;
 }
 
 .sidebar__avatar {
