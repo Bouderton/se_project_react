@@ -1,4 +1,6 @@
 import "./App.css";
+
+// Components
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -6,14 +8,21 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemModal from "../ItemModal/ItemModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
-import { useState, useEffect } from "react";
-import { getForecast, parseWeatherData } from "../../utils/weatherApi";
-import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import { Route, Routes, Navigate } from "react-router-dom";
 import Profile from "../Profile/Profile";
+
+// Hooks and Routes
+import { useState, useEffect } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+
+// Utils
+import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import api from "../../utils/api";
 import * as auth from "../../utils/auth";
-import { setToken, getToken } from "../../utils/token";
+// import { setToken, getToken } from "../../utils/token";
+
+// Contexts
+import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -22,6 +31,7 @@ function App() {
   const [currentTempUnit, setCurrentTempUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
 
   const handleToggleSwitch = () => {
     setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
@@ -138,61 +148,63 @@ function App() {
 
   return (
     <div>
-      <CurrentTempUnitContext.Provider
-        value={{ currentTempUnit, handleToggleSwitch }}
-      >
-        <Header
-          onCreateModal={handleCreateModal}
-          temp={temp}
-          handleSignUpModal={handleSignUpModal}
-          handleLoginModal={handleLoginModal}
-        />
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <Main
-                weatherTemp={temp}
-                onSelectCard={handleSelectedCard}
-                clothingItems={clothingItems}
-              />
-            }
+      <CurrentUserContext.Provider value={currentUser}>
+        <CurrentTempUnitContext.Provider
+          value={{ currentTempUnit, handleToggleSwitch }}
+        >
+          <Header
+            onCreateModal={handleCreateModal}
+            temp={temp}
+            handleSignUpModal={handleSignUpModal}
+            handleLoginModal={handleLoginModal}
           />
-          <Route
-            path="/profile"
-            element={
-              <Profile
-                clothingItems={clothingItems}
-                onSelectCard={handleSelectedCard}
-                handleCreateModal={handleCreateModal}
-              />
-            }
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <Main
+                  weatherTemp={temp}
+                  onSelectCard={handleSelectedCard}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  clothingItems={clothingItems}
+                  onSelectCard={handleSelectedCard}
+                  handleCreateModal={handleCreateModal}
+                />
+              }
+            />
+          </Routes>
+          <Footer />
+          <AddItemModal
+            isOpen={activeModal === "create"}
+            handleCloseModal={handleCloseModal}
+            handleAddItem={handleItemSubmit}
           />
-        </Routes>
-        <Footer />
-        <AddItemModal
-          isOpen={activeModal === "create"}
-          handleCloseModal={handleCloseModal}
-          handleAddItem={handleItemSubmit}
-        />
-        <ItemModal
-          selectedCard={selectedCard}
-          onClose={handleCloseModal}
-          isOpen={activeModal === "preview"}
-          deleteCard={handleDeleteItem}
-        />
-        <RegisterModal
-          isOpen={activeModal === "signup"}
-          handleCloseModal={handleCloseModal}
-          handleSignUp={handleSignUp}
-        />
-        <LoginModal
-          isOpen={activeModal === "login"}
-          handleCloseModal={handleCloseModal}
-          handleLogin={handleLogin}
-        />
-      </CurrentTempUnitContext.Provider>
+          <ItemModal
+            selectedCard={selectedCard}
+            onClose={handleCloseModal}
+            isOpen={activeModal === "preview"}
+            deleteCard={handleDeleteItem}
+          />
+          <RegisterModal
+            isOpen={activeModal === "signup"}
+            handleCloseModal={handleCloseModal}
+            handleSignUp={handleSignUp}
+          />
+          <LoginModal
+            isOpen={activeModal === "login"}
+            handleCloseModal={handleCloseModal}
+            handleLogin={handleLogin}
+          />
+        </CurrentTempUnitContext.Provider>
+      </CurrentUserContext.Provider>
     </div>
   );
 }
