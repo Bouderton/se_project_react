@@ -4,4 +4,4 @@ const CurrentUserContext = React.createContext({
   currentUser: {},
 });
 
-export default { CurrentUserContext };
+export { CurrentUserContext };

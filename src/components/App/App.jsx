@@ -99,6 +99,9 @@ function App() {
         // setUserData(data.user);
         handleSignUpModal({ email, password, name, avatar });
         handleCloseModal();
+        setCurrentUser({ email, password, name, avatar });
+        console.log(currentUser);
+        setLoggedIn(true);
         alert("Sign Up Successful. Please Log In");
       })
       .catch((err) => console.log(err));
@@ -107,9 +110,9 @@ function App() {
   const handleLogin = ({ email, password }) => {
     auth.signIn({ email, password }).then((res) => {
       handleLoginModal({ email, password });
-      setLoggedIn(true);
       localStorage.setItem("jwt", res.token);
       handleCloseModal();
+      setLoggedIn(true);
     });
   };
 
@@ -140,9 +143,13 @@ function App() {
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
-      auth.checkToken(token).then(() => {
-        setLoggedIn(true);
-      });
+      auth
+        .checkToken(token)
+        .then((res) => {
+          setLoggedIn(true);
+          setCurrentUser(res);
+        })
+        .catch((err) => console.log(err));
     }
   });
 
@@ -157,6 +164,7 @@ function App() {
             temp={temp}
             handleSignUpModal={handleSignUpModal}
             handleLoginModal={handleLoginModal}
+            isLoggedIn={loggedIn}
           />
           <Routes>
             <Route
