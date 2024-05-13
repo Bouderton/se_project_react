@@ -19,6 +19,7 @@ const ClothesSection = ({ clothingItems, handleCreateModal, onSelectCard }) => {
       <div className="profile__clothes-items">
         {clothingItems.map((item) => {
           const isOwn = item.owner === currentUser._id;
+          console.log(item.owner, currentUser._id);
           return (
             isOwn && (
               <ItemCard
