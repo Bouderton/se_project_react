@@ -4,11 +4,9 @@ import ItemCard from "../ItemCard/ItemCard";
 import WeatherCard from "../WeatherCard/WeatherCard";
 import { useMemo, useContext } from "react";
 import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Main({ weatherTemp, onSelectCard, clothingItems }) {
   const { currentTempUnit } = useContext(CurrentTempUnitContext);
-  const currentUser = useContext(CurrentUserContext);
 
   const temp = weatherTemp?.temperature?.[currentTempUnit] || 999;
   const weatherType = useMemo(() => {
@@ -35,19 +33,9 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
       <section className="card__section" id="card-section">
         Today is {`${temp}°${currentTempUnit}`} / You may want to wear:
         <div className="card__items">
-          {filteredCards.map((item) => {
-            const isOwn = item.owner === currentUser._id;
-            console.log(item.owner, currentUser._id);
-            return (
-              isOwn && (
-                <ItemCard
-                  key={item._id}
-                  item={item}
-                  onSelectCard={onSelectCard}
-                />
-              )
-            );
-          })}
+          {filteredCards.map((item) => (
+            <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
+          ))}
         </div>
       </section>
     </main>
