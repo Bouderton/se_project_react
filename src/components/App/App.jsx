@@ -67,8 +67,9 @@ function App() {
   // Item Handlers
 
   const handleDeleteItem = (selectedCard) => {
+    const token = localStorage.getItem("jwt");
     api
-      .deleteItem(selectedCard)
+      .deleteItem(selectedCard, token)
       .then(() => {
         const postDelete = clothingItems.filter((card) => {
           return card._id !== selectedCard._id;

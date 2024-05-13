@@ -28,11 +28,12 @@ const addItem = ({ name, weather, imageUrl }, token) => {
   }).then(checkResponse);
 };
 
-const deleteItem = ({ _id }) => {
+const deleteItem = ({ _id }, token) => {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
 };
