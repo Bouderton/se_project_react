@@ -130,7 +130,7 @@ function App() {
       .editProfile({ name, avatar }, token)
       .then((res) => {
         handleEditProfileModal({ name, avatar });
-        setCurrentUser(res.data);
+        setCurrentUser(res);
         handleCloseModal();
       })
       .catch((err) => console.log(err));
