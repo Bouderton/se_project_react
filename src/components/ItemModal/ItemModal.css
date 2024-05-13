@@ -40,7 +40,7 @@
   gap: 250px;
 }
 
-.modal__delete-button {
+/* .modal__delete-button {
   display: flex;
   align-items: flex-start;
   outline: none;
@@ -49,6 +49,22 @@
   color: red;
   cursor: pointer;
   padding: 0;
+} */
+
+.modal__delete-button_hidden {
+  visibility: hidden;
+}
+
+.modal__delete-button_visible {
+  display: flex;
+  align-items: flex-start;
+  outline: none;
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+  padding: 0;
+  width: 100px;
 }
 
 .modal__image {

@@ -28,7 +28,7 @@ const addItem = ({ name, weather, imageUrl }, token) => {
   }).then(checkResponse);
 };
 
-const deleteItem = ({ _id }, token) => {
+const deleteItem = (_id, token) => {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
     headers: {

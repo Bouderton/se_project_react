@@ -1,6 +1,9 @@
 import ItemCard from "../ItemCard/ItemCard";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { useContext } from "react";
 
 const ClothesSection = ({ clothingItems, handleCreateModal, onSelectCard }) => {
+  const currentUser = useContext(CurrentUserContext);
   return (
     <section className="profile__clothes-section">
       <div className="profile__clothes-text-container">
@@ -15,8 +18,15 @@ const ClothesSection = ({ clothingItems, handleCreateModal, onSelectCard }) => {
       </div>
       <div className="profile__clothes-items">
         {clothingItems.map((item) => {
+          const isOwn = item.owner === currentUser._id;
           return (
-            <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
+            isOwn && (
+              <ItemCard
+                key={item._id}
+                item={item}
+                onSelectCard={onSelectCard}
+              />
+            )
           );
         })}
       </div>
