@@ -3,11 +3,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const EditProfileModal = ({
-  isOpen,
-  handleCloseModal,
-  handleEditProfileModal,
-}) => {
+const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
   const currentUser = useContext(CurrentUserContext);
 
   const [name, setName] = useState("");
@@ -23,7 +19,7 @@ const EditProfileModal = ({
 
   function handleSubmit(e) {
     e.preventDefault();
-    handleEditProfileModal({ name, avatar });
+    handleEditProfile({ name, avatar });
   }
   return (
     <ModalWithForm
@@ -31,13 +27,15 @@ const EditProfileModal = ({
       onClose={handleCloseModal}
       isOpen={isOpen}
       buttonText="Save Changes"
+      onSubmit={handleSubmit}
     >
       <label className="modal__form-label">
         Name
         <input
-          value={currentUser?.name}
+          type="text"
           className="modal__form-input"
           onChange={handleNameChange}
+          placeholder={currentUser?.name}
         />
       </label>
       <label className="modal__form-label">
@@ -45,6 +43,7 @@ const EditProfileModal = ({
         <input
           className="modal__form-input"
           placeholder="Avatar URL"
+          type="url"
           onChange={handleAvatarChange}
         />
       </label>

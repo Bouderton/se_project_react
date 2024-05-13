@@ -113,12 +113,27 @@ function App() {
   };
 
   const handleLogin = ({ email, password }) => {
-    auth.signIn({ email, password }).then((res) => {
-      handleLoginModal({ email, password });
-      localStorage.setItem("jwt", res.token);
-      handleCloseModal();
-      setLoggedIn(true);
-    });
+    auth
+      .signIn({ email, password })
+      .then((res) => {
+        handleLoginModal({ email, password });
+        localStorage.setItem("jwt", res.token);
+        handleCloseModal();
+        setLoggedIn(true);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleEditProfile = ({ name, avatar }) => {
+    const token = localStorage.getItem("jwt");
+    auth
+      .editProfile({ name, avatar }, token)
+      .then((res) => {
+        handleEditProfileModal({ name, avatar });
+        setCurrentUser(res.data);
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
   };
 
   // useEffect APIs
@@ -219,7 +234,7 @@ function App() {
           <EditProfileModal
             isOpen={activeModal === "edit"}
             handleCloseModal={handleCloseModal}
-            handleEditProfileModal={handleEditProfileModal}
+            handleEditProfile={handleEditProfile}
           />
         </CurrentTempUnitContext.Provider>
       </CurrentUserContext.Provider>
