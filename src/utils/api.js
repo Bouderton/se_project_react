@@ -28,6 +28,16 @@ const addItem = ({ name, weather, imageUrl }, token) => {
   }).then(checkResponse);
 };
 
+const editProfile = ({ name, avatar }) => {
+  return fetch(`${baseUrl}/users`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, avatar }),
+  }).then(checkResponse);
+};
+
 const deleteItem = (_id, token) => {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
@@ -44,6 +54,7 @@ const api = {
   getItems,
   addItem,
   deleteItem,
+  editProfile,
 };
 
 export default api;

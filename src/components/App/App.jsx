@@ -60,7 +60,7 @@ function App() {
     setActiveModal("login");
   };
 
-  const handleEditProfile = () => {
+  const handleEditProfileModal = () => {
     setActiveModal("edit");
   };
 
@@ -189,7 +189,7 @@ function App() {
                   clothingItems={clothingItems}
                   onSelectCard={handleSelectedCard}
                   handleCreateModal={handleCreateModal}
-                  handleEditProfile={handleEditProfile}
+                  handleEditProfileModal={handleEditProfileModal}
                 />
               }
             />
@@ -219,7 +219,7 @@ function App() {
           <EditProfileModal
             isOpen={activeModal === "edit"}
             handleCloseModal={handleCloseModal}
-            handleEditProfile={handleEditProfile}
+            handleEditProfileModal={handleEditProfileModal}
           />
         </CurrentTempUnitContext.Provider>
       </CurrentUserContext.Provider>

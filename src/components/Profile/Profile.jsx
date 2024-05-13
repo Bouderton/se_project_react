@@ -6,11 +6,11 @@ const Profile = ({
   clothingItems,
   handleCreateModal,
   onSelectCard,
-  handleEditProfile,
+  handleEditProfileModal,
 }) => {
   return (
     <div className="profile">
-      <SideBar handleEditProfile={handleEditProfile} />
+      <SideBar handleEditProfile={handleEditProfileModal} />
       <ClothesSection
         clothingItems={clothingItems}
         onSelectCard={onSelectCard}
