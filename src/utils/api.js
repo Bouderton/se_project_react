@@ -21,9 +21,9 @@ const addItem = ({ name, weather, imageUrl }, token) => {
       authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
-      name: name,
-      weather: weather,
-      imageUrl: imageUrl,
+      name,
+      weather,
+      imageUrl,
     }),
   }).then(checkResponse);
 };

@@ -81,11 +81,12 @@ function App() {
       });
   };
 
-  const handleItemSubmit = ({ name, weather, imageUrl }, token) => {
+  const handleItemSubmit = ({ name, weather, imageUrl }) => {
+    const token = localStorage.getItem("jwt");
     api
       .addItem({ name, weather, imageUrl }, token)
       .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+        setClothingItems([newItem, ...setClothingItems]);
         handleCloseModal();
       })
       .catch((err) => console.log(err));
