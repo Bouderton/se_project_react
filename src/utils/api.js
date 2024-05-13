@@ -13,11 +13,12 @@ const getItems = () => {
   }).then(checkResponse);
 };
 
-const addItem = ({ name, weather, imageUrl }) => {
+const addItem = ({ name, weather, imageUrl }, token) => {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({
       name: name,

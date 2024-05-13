@@ -19,7 +19,6 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import api from "../../utils/api";
 import * as auth from "../../utils/auth";
-// import { setToken, getToken } from "../../utils/token";
 
 // Contexts
 import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
@@ -33,6 +32,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [token, setToken] = useState(null);
 
   const handleToggleSwitch = () => {
     setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
@@ -81,9 +81,9 @@ function App() {
       });
   };
 
-  const handleItemSubmit = ({ name, weather, imageUrl }) => {
+  const handleItemSubmit = ({ name, weather, imageUrl }, token) => {
     api
-      .addItem({ name, weather, imageUrl })
+      .addItem({ name, weather, imageUrl }, token)
       .then((newItem) => {
         setClothingItems([newItem, ...clothingItems]);
         handleCloseModal();
@@ -100,8 +100,6 @@ function App() {
     auth
       .signUp({ email, password, name, avatar })
       .then(() => {
-        // setToken(data.jwt);
-        // setUserData(data.user);
         handleSignUpModal({ email, password, name, avatar });
         handleCloseModal();
         setCurrentUser({ email, password, name, avatar });
@@ -137,7 +135,6 @@ function App() {
     api
       .getItems()
       .then((items) => {
-        // console.log(items);
         setClothingItems(items);
       })
       .catch((err) => {
@@ -156,7 +153,7 @@ function App() {
         })
         .catch((err) => console.log(err));
     }
-  });
+  }, []);
 
   return (
     <div>

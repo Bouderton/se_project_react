@@ -1,8 +1,10 @@
 import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
-const SideBar = ({ handleCreateModal, handleEditProfile }) => {
+const SideBar = ({ handleEditProfile }) => {
+  const navigate = useNavigate();
   const currentUser = useContext(CurrentUserContext);
   return (
     <div className="sidebar">
@@ -22,7 +24,13 @@ const SideBar = ({ handleCreateModal, handleEditProfile }) => {
         >
           Edit Profile
         </button>
-        <button type="text" className="sidebar__user-button">
+        <button
+          type="text"
+          className="sidebar__user-button"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           Log Out
         </button>
       </div>
