@@ -116,8 +116,8 @@ function App() {
       .then((res) => {
         handleLoginModal({ email, password });
         localStorage.setItem("jwt", res.token);
-        handleCloseModal();
         setLoggedIn(true);
+        handleCloseModal();
       })
       .catch((err) => console.log(err));
   };
@@ -168,7 +168,7 @@ function App() {
         })
         .catch((err) => console.log(err));
     }
-  }, []);
+  }, [loggedIn]);
 
   return (
     <div>
