@@ -30,6 +30,7 @@ const SideBar = ({ handleEditProfile, setLoggedIn }) => {
           onClick={() => {
             navigate("/");
             setLoggedIn(false);
+            localStorage.removeItem("jwt");
           }}
         >
           Log Out
