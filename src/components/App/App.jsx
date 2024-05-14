@@ -32,7 +32,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [token, setToken] = useState(null);
+  // const [token, setToken] = useState(null);
 
   const handleToggleSwitch = () => {
     setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
@@ -205,6 +205,7 @@ function App() {
                   onSelectCard={handleSelectedCard}
                   handleCreateModal={handleCreateModal}
                   handleEditProfileModal={handleEditProfileModal}
+                  setLoggedIn={setLoggedIn}
                 />
               }
             />

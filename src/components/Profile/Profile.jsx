@@ -7,10 +7,14 @@ const Profile = ({
   handleCreateModal,
   onSelectCard,
   handleEditProfileModal,
+  setLoggedIn,
 }) => {
   return (
     <div className="profile">
-      <SideBar handleEditProfile={handleEditProfileModal} />
+      <SideBar
+        handleEditProfile={handleEditProfileModal}
+        setLoggedIn={setLoggedIn}
+      />
       <ClothesSection
         clothingItems={clothingItems}
         onSelectCard={onSelectCard}

@@ -1,9 +1,9 @@
 import "./SideBar.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SideBar = ({ handleEditProfile }) => {
+const SideBar = ({ handleEditProfile, setLoggedIn }) => {
   const navigate = useNavigate();
   const currentUser = useContext(CurrentUserContext);
   return (
@@ -29,6 +29,7 @@ const SideBar = ({ handleEditProfile }) => {
           className="sidebar__user-button"
           onClick={() => {
             navigate("/");
+            setLoggedIn(false);
           }}
         >
           Log Out
