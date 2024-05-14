@@ -245,9 +245,9 @@ export default App;
 
 // TODO LIST
 // Register (DONE)
-// Login
-// LOGIN AND SIGN UP ISSUES
-// Protected Routes
-// Create item
-// Show items on the page
-// Delete item
+// Login and Sign Out (DONE)
+// Protected APIs (DONE)
+// Create item (DONE)
+// Show items on the page (DONE)
+// Delete item (DONE)
+// Add Liked and Dislike features (uhhhhhhh)

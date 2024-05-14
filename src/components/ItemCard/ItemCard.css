@@ -15,14 +15,16 @@
 
 .card__name-container {
   position: relative;
+  top: 40px;
+  gap: 10px;
   display: flex;
+  align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 
 .card__name {
   padding: 2px 12px;
-  position: absolute;
-  top: 17px;
   background: white;
   border-radius: 4px;
   text-align: center;
@@ -30,7 +32,6 @@
   font-size: 20px;
   font-family: "CabinetGrotesk-Medium", serif;
   font-weight: 600;
-  /* width: 100%; */
 }
 
 .card__image {
@@ -39,8 +40,19 @@
   object-fit: cover;
   border-radius: 10px;
   border: 1px red;
+  cursor: pointer;
 }
 
-.card__image:hover {
+.card__like-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
+}
+
+.card__like-button_img {
+  width: 20px;
+  height: 20px;
 }
