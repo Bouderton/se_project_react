@@ -39,7 +39,7 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
         />
       </label>
       <label className="modal__form-label">
-        Avatar{" "}
+        Avatar
         <input
           className="modal__form-input"
           placeholder="Avatar URL"

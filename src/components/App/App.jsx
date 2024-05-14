@@ -105,9 +105,7 @@ function App() {
         handleSignUpModal({ email, password, name, avatar });
         handleCloseModal();
         setCurrentUser({ email, password, name, avatar });
-        console.log(currentUser);
         setLoggedIn(true);
-        alert("Sign Up Successful. Please Log In");
       })
       .catch((err) => console.log(err));
   };
@@ -248,6 +246,7 @@ export default App;
 // TODO LIST
 // Register (DONE)
 // Login
+// LOGIN AND SIGN UP ISSUES
 // Protected Routes
 // Create item
 // Show items on the page

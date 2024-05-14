@@ -93,9 +93,7 @@ const RegisterModal = ({ isOpen, handleCloseModal, handleSignUp }) => {
         Avatar
         <input
           type="url"
-          name="avatar"
           minLength="1"
-          maxLength="30"
           placeholder="Avatar URL"
           className="modal__form-input"
           onChange={handleUrlChange}
