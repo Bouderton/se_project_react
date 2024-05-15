@@ -38,12 +38,36 @@ const deleteItem = (_id, token) => {
   }).then(checkResponse);
 };
 
+const addLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
+const removeLike = (id, token) => {
+  return fetch(`${baseUrl}/items/${id}/likes`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${token}`,
+    },
+  });
+};
+
+// OPTIMIZE THESE CALLS ^^^^^
+
 // ADD SIGNIN AND SIGNUP FETCHES
 
 const api = {
   getItems,
   addItem,
   deleteItem,
+  addLike,
+  removeLike,
 };
 
 export default api;

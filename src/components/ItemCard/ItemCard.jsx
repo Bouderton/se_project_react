@@ -8,6 +8,7 @@ const ItemCard = ({ item, onSelectCard }) => {
         <div className="card__name-container">
           <div className="card__name">{item.name}</div>
           <button className="card__like-button">
+            {/* HANDLE LIKE COLOR CHANGE */}
             <img
               src={heartIcon}
               alt="like button"
