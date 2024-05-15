@@ -93,6 +93,28 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleCardLike = (id, isLiked) => {
+    const token = localStorage.getItem("jwt");
+
+    !isLiked
+      ? api
+          .addLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err))
+      : api
+          .removeLike(id, token)
+          .then((updatedCard) => {
+            setClothingItems((cards) =>
+              cards.map((item) => (item._id === id ? updatedCard : item))
+            );
+          })
+          .catch((err) => console.log(err));
+  };
+
   // Authorization Handlers
 
   const handleSignUp = ({ email, password, name, avatar }) => {
