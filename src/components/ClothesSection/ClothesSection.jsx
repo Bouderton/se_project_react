@@ -2,7 +2,13 @@ import ItemCard from "../ItemCard/ItemCard";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
 
-const ClothesSection = ({ clothingItems, handleCreateModal, onSelectCard }) => {
+const ClothesSection = ({
+  clothingItems,
+  handleCreateModal,
+  onSelectCard,
+  loggedIn,
+  onCardLike,
+}) => {
   const currentUser = useContext(CurrentUserContext);
   return (
     <section className="profile__clothes-section">
@@ -25,6 +31,8 @@ const ClothesSection = ({ clothingItems, handleCreateModal, onSelectCard }) => {
                 key={item._id}
                 item={item}
                 onSelectCard={onSelectCard}
+                loggedIn={loggedIn}
+                onCardLike={onCardLike}
               />
             )
           );

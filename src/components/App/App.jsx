@@ -214,6 +214,8 @@ function App() {
                   weatherTemp={temp}
                   onSelectCard={handleSelectedCard}
                   clothingItems={clothingItems}
+                  onCardLike={handleCardLike}
+                  loggedIn={loggedIn}
                 />
               }
             />
@@ -226,6 +228,8 @@ function App() {
                   handleCreateModal={handleCreateModal}
                   handleEditProfileModal={handleEditProfileModal}
                   setLoggedIn={setLoggedIn}
+                  loggedIn={loggedIn}
+                  onCardLike={handleCardLike}
                 />
               }
             />

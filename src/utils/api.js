@@ -42,7 +42,6 @@ const addLike = (id, token) => {
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "PUT",
     headers: {
-      "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
   }).then(checkResponse);
@@ -52,7 +51,6 @@ const removeLike = (id, token) => {
   return fetch(`${baseUrl}/items/${id}/likes`, {
     method: "DELETE",
     headers: {
-      "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
   });
