@@ -1,31 +1,31 @@
 export const weatherOptions = [
   {
-    url: new URL("../images/day/day-sunny.svg", import.meta.url).href,
+    url: new URL("../images/day/sunny.svg", import.meta.url).href,
     day: true,
     type: "sunny",
   },
   {
-    url: new URL("../images/day/day-cloudy.svg", import.meta.url).href,
+    url: new URL("../images/day/cloudy.svg", import.meta.url).href,
     day: true,
     type: "cloudy",
   },
   {
-    url: new URL("../images/day/day-rain.svg", import.meta.url).href,
+    url: new URL("../images/day/rainy.svg", import.meta.url).href,
     day: true,
     type: "rainy",
   },
   {
-    url: new URL("../images/day/day-storm.svg", import.meta.url).href,
+    url: new URL("../images/day/stormy.svg", import.meta.url).href,
     day: true,
     type: "storm",
   },
   {
-    url: new URL("../images/day/day-snow.svg", import.meta.url).href,
+    url: new URL("../images/day/snowy.svg", import.meta.url).href,
     day: true,
     type: "snowy",
   },
   {
-    url: new URL("../images/day/day-fog.svg", import.meta.url).href,
+    url: new URL("../images/day/foggy.svg", import.meta.url).href,
     day: true,
     type: "fog",
   },

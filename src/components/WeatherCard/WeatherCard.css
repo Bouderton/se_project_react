@@ -1,16 +1,24 @@
 .weather__info {
-  position: absolute;
+  /* position: absolute;
   top: 30px;
-  left: 16px;
+  left: 16px; */
   font-size: 40px;
-  line-height: 40px;
+  padding: 20px 16px;
   color: white;
+  height: 40px;
 }
 
 .weather {
-  position: relative;
-  margin: 28px auto 0;
-}
-.weather__image {
   width: 100%;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 28px auto 0;
+  background: #00a3ff;
+}
+
+.weather__image {
+  border-radius: 12px 12px 0 0;
+  max-width: 150px;
 }
