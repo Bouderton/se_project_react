@@ -277,3 +277,4 @@ export default App;
 // Show items on the page (DONE)
 // Delete item (DONE)
 // Add Liked and Dislike features (uhhhhhhh)
+// DYNAMIC WEATHER CARDS
