@@ -53,7 +53,7 @@ const removeLike = (id, token) => {
     headers: {
       authorization: `Bearer ${token}`,
     },
-  });
+  }).then(checkResponse);
 };
 
 // OPTIMIZE THESE CALLS ^^^^^
