@@ -30,32 +30,32 @@ export const weatherOptions = [
     type: "fog",
   },
   {
-    url: new URL("../images/night/night-moon.svg", import.meta.url).href,
+    url: new URL("../images/night/moon.svg", import.meta.url).href,
     day: false,
     type: "moon",
   },
   {
-    url: new URL("../images/night/night-cloudy.svg", import.meta.url).href,
+    url: new URL("../images/night/cloudy-night.svg", import.meta.url).href,
     day: false,
     type: "cloudy",
   },
   {
-    url: new URL("../images/night/night-rain.svg", import.meta.url).href,
+    url: new URL("../images/night/rainy-night.svg", import.meta.url).href,
     day: false,
     type: "rainy",
   },
   {
-    url: new URL("../images/night/night-storm.svg", import.meta.url).href,
+    url: new URL("../images/night/stormy-night.svg", import.meta.url).href,
     day: false,
     type: "storm",
   },
   {
-    url: new URL("../images/night/night-snow.svg", import.meta.url).href,
+    url: new URL("../images/night/snowy-night.svg", import.meta.url).href,
     day: false,
     type: "snowy",
   },
   {
-    url: new URL("../images/night/night-fog.svg", import.meta.url).href,
+    url: new URL("../images/night/foggy-night.svg", import.meta.url).href,
     day: false,
     type: "fog",
   },
