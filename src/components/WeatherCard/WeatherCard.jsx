@@ -13,9 +13,7 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
   const weatherOptionUrl = weatherOption.url || "";
   return (
     <section className="weather">
-      <p className="weather__info">
-        {weatherTemp}°{currentTempUnit}
-      </p>
+      <div className="weather__info">{weatherTemp}</div>
       <img src={weatherOptionUrl} className="weather__image" />
     </section>
   );
