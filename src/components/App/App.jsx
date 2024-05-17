@@ -194,10 +194,10 @@ function App() {
 
   return (
     <div>
-      <CurrentTempUnitContext.Provider
-        value={{ currentTempUnit, handleToggleSwitch }}
-      >
-        <CurrentUserContext.Provider value={currentUser}>
+      <CurrentUserContext.Provider value={currentUser}>
+        <CurrentTempUnitContext.Provider
+          value={(currentTempUnit, handleToggleSwitch)}
+        >
           <Header
             onCreateModal={handleCreateModal}
             temp={temp}
@@ -261,8 +261,8 @@ function App() {
             handleCloseModal={handleCloseModal}
             handleEditProfile={handleEditProfile}
           />
-        </CurrentUserContext.Provider>
-      </CurrentTempUnitContext.Provider>
+        </CurrentTempUnitContext.Provider>
+      </CurrentUserContext.Provider>
     </div>
   );
 }
