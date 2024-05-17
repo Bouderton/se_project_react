@@ -268,3 +268,13 @@ function App() {
 }
 
 export default App;
+
+// TODO LIST
+// Register (DONE)
+// Login and Sign Out (DONE)
+// Protected APIs (DONE)
+// Create item (DONE)
+// Show items on the page (DONE)
+// Delete item (DONE)
+// Add Liked and Dislike features (uhhhhhhh)
+// DYNAMIC WEATHER CARDS
