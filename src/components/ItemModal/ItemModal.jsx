@@ -1,7 +1,6 @@
 import "./ItemModal.css";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import { useContext } from "react";
-import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 const ItemModal = ({ selectedCard, onClose, isOpen, deleteCard }) => {
   const handleDelete = (e) => {

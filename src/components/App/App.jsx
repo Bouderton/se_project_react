@@ -13,7 +13,7 @@ import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 // Hooks and Routes
 import { useState, useEffect } from "react";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 // Utils
 import { getForecast, parseWeatherData } from "../../utils/weatherApi";
@@ -21,7 +21,7 @@ import api from "../../utils/api";
 import * as auth from "../../utils/auth";
 
 // Contexts
-import { CurrentTempUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function App() {
@@ -195,7 +195,7 @@ function App() {
   return (
     <div>
       <CurrentUserContext.Provider value={currentUser}>
-        <CurrentTempUnitContext.Provider
+        <CurrentTemperatureUnitContext.Provider
           value={(currentTempUnit, handleToggleSwitch)}
         >
           <Header
@@ -261,7 +261,7 @@ function App() {
             handleCloseModal={handleCloseModal}
             handleEditProfile={handleEditProfile}
           />
-        </CurrentTempUnitContext.Provider>
+        </CurrentTemperatureUnitContext.Provider>
       </CurrentUserContext.Provider>
     </div>
   );
