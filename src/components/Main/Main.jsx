@@ -12,9 +12,9 @@ function Main({
   onCardLike,
   loggedIn,
 }) {
-  const { currentTempUnit } = useContext(CurrentTemperatureUnitContext);
+  const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
-  const temp = weatherTemp?.temperature?.[currentTempUnit] || 999;
+  const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
   const weatherType = useMemo(() => {
     if (temp >= 86) {
       return "hot";
@@ -33,7 +33,7 @@ function Main({
     <main className="main">
       <WeatherCard day={true} type="cloudy" weatherTemp={temp} />
       <section className="card__section" id="card-section">
-        Today is {`${temp}°${currentTempUnit}`} / You may want to wear:
+        Today is {`${temp}°${currentTemperatureUnit}`} / You may want to wear:
         <div className="card__items">
           {filteredCards.map((item) => (
             <ItemCard

@@ -28,14 +28,14 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
-  const [currentTempUnit, setCurrentTempUnit] = useState("F");
+  const [currentTemperatureUnit, setcurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   // const [token, setToken] = useState(null);
 
-  const handleToggleSwitch = () => {
-    setCurrentTempUnit(currentTempUnit === "F" ? "C" : "F");
+  const handleToggleSwitchChange = () => {
+    setcurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
 
   // Modal Handlers
@@ -196,7 +196,7 @@ function App() {
     <div>
       <CurrentUserContext.Provider value={currentUser}>
         <CurrentTemperatureUnitContext.Provider
-          value={{ currentTempUnit, handleToggleSwitch }}
+          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
           <Header
             onCreateModal={handleCreateModal}

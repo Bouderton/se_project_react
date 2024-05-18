@@ -3,15 +3,15 @@ import "./ToggleSwitch.css";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 
 const ToggleSwitch = () => {
-  // const [currentTempUnit, handleToggleSwitch] = useState("C");
+  // const [currentTemperatureUnit, handleToggleSwitchChange] = useState("C");
 
   // const handleChange = (e) => {
-  //   if (currentTempUnit === "C") handleToggleSwitch("F");
-  //   if (currentTempUnit === "F") handleToggleSwitch("C");
+  //   if (currentTemperatureUnit === "C") handleToggleSwitchChange("F");
+  //   if (currentTemperatureUnit === "F") handleToggleSwitchChange("C");
   // };
 
-  // console.log(currentTempUnit);
-  const { currentTempUnit, handleToggleSwitch } = useContext(
+  // console.log(currentTemperatureUnit);
+  const { currentTemperatureUnit, handleToggleSwitchChange } = useContext(
     CurrentTemperatureUnitContext
   );
 
@@ -20,25 +20,25 @@ const ToggleSwitch = () => {
       <input
         type="checkbox"
         className="switch__box"
-        onChange={handleToggleSwitch}
+        onChange={handleToggleSwitchChange}
       />
       <span
         className={
-          currentTempUnit === "F"
+          currentTemperatureUnit === "F"
             ? "switch__slider switch__slider-F"
             : "switch__slider switch__slider-C"
         }
       ></span>
       <p
         className={`switch__temp-F ${
-          currentTempUnit === "F" && "switch__active"
+          currentTemperatureUnit === "F" && "switch__active"
         }`}
       >
         F
       </p>
       <p
         className={`switch__temp-C ${
-          currentTempUnit === "C" && "switch__active"
+          currentTemperatureUnit === "C" && "switch__active"
         }`}
       >
         C
