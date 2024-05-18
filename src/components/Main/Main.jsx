@@ -31,7 +31,11 @@ function Main({
 
   return (
     <main className="main">
-      <WeatherCard day={true} type="cloudy" weatherTemp={temp} />
+      <WeatherCard
+        day={true}
+        type="cloudy"
+        weatherTemp={`${temp}°${currentTempUnit}`}
+      />
       <section className="card__section" id="card-section">
         Today is {`${temp}°${currentTempUnit}`} / You may want to wear:
         <div className="card__items">

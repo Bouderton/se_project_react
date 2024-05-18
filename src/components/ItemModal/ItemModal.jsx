@@ -10,11 +10,6 @@ const ItemModal = ({ selectedCard, onClose, isOpen, deleteCard }) => {
   const currentUser = useContext(CurrentUserContext);
   const isOwn = selectedCard.owner === currentUser._id;
 
-  // Creating a variable which you'll then set in `className` for the delete button
-  // const itemDeleteButtonClassName = `modal__delete-button ${
-  //   isOwn ? "modal__delete-button_visible" : "modal__delete-button_hidden"
-  // }`;
-
   return (
     <div className={`modal ${isOpen ? " modal__opened" : ""}`}>
       <div className="modal__content">
