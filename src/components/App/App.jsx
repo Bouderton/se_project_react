@@ -196,7 +196,7 @@ function App() {
     <div>
       <CurrentUserContext.Provider value={currentUser}>
         <CurrentTemperatureUnitContext.Provider
-          value={(currentTempUnit, handleToggleSwitch)}
+          value={{ currentTempUnit, handleToggleSwitch }}
         >
           <Header
             onCreateModal={handleCreateModal}
