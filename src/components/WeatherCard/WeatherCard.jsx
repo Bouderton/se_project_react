@@ -4,7 +4,7 @@ import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import { useContext } from "react";
 
 const WeatherCard = ({ day, type, weatherTemp = "" }) => {
-  const currentTempUnit = useContext(CurrentTemperatureUnitContext);
+  const { currentTempUnit } = useContext(CurrentTemperatureUnitContext);
 
   const weatherOption = weatherOptions.find((item) => {
     return item.day === day && item.type === type;
