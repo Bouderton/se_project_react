@@ -1,4 +1,7 @@
 .weather__info {
+  /* position: absolute;
+  top: 30px;
+  left: 16px; */
   font-size: 40px;
   padding: 20px 16px;
   color: white;
@@ -17,6 +20,6 @@
 }
 
 .weather__image {
-  border-radius: 12px 12px 12px 0;
+  border-radius: 12px 12px 0 0;
   max-width: 150px;
 }
