@@ -24,17 +24,14 @@ const ClothesSection = ({
       </div>
       <div className="profile__clothes-items">
         {clothingItems.map((item) => {
-          const isOwn = item.owner === currentUser._id;
           return (
-            isOwn && (
-              <ItemCard
-                key={item._id}
-                item={item}
-                onSelectCard={onSelectCard}
-                loggedIn={loggedIn}
-                onCardLike={onCardLike}
-              />
-            )
+            <ItemCard
+              key={item._id}
+              item={item}
+              onSelectCard={onSelectCard}
+              loggedIn={loggedIn}
+              onCardLike={onCardLike}
+            />
           );
         })}
       </div>
