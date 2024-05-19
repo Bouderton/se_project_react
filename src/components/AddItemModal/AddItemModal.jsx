@@ -75,7 +75,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
       </label>
       <div className="modal__weather-type">
         <p className="modal__weather-title">Select Weather Type</p>
-        <div className="modal__weather-options">
+        <div>
           <label className="modal__weather-option">
             <input
               name="weather"

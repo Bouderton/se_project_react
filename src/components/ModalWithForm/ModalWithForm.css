@@ -91,10 +91,3 @@
 .modal__close-button:hover {
   cursor: pointer;
 }
-
-.modal__weather-options {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 8px;
-}
