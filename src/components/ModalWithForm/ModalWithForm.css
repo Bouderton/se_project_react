@@ -68,6 +68,10 @@
 
 .modal__weather-option {
   margin: 8px 0 0 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
 }
 
 .modal__weather-title {
@@ -86,4 +90,11 @@
 
 .modal__close-button:hover {
   cursor: pointer;
+}
+
+.modal__weather-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
 }
