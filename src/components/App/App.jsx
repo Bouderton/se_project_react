@@ -10,6 +10,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import Profile from "../Profile/Profile";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
+import { ProtectedRoute } from "../ProtectedRoute/ProtectedRoute";
 
 // Hooks and Routes
 import { useState, useEffect } from "react";
@@ -193,35 +194,35 @@ function App() {
   }, [loggedIn]);
 
   return (
-    <div>
-      <CurrentUserContext.Provider value={currentUser}>
-        <CurrentTemperatureUnitContext.Provider
-          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
-        >
-          <Header
-            onCreateModal={handleCreateModal}
-            temp={temp}
-            handleSignUpModal={handleSignUpModal}
-            handleLoginModal={handleLoginModal}
-            isLoggedIn={loggedIn}
+    <CurrentUserContext.Provider value={currentUser}>
+      <CurrentTemperatureUnitContext.Provider
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+      >
+        <Header
+          onCreateModal={handleCreateModal}
+          temp={temp}
+          handleSignUpModal={handleSignUpModal}
+          handleLoginModal={handleLoginModal}
+          isLoggedIn={loggedIn}
+        />
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <Main
+                weatherTemp={temp}
+                onSelectCard={handleSelectedCard}
+                clothingItems={clothingItems}
+                onCardLike={handleCardLike}
+                loggedIn={loggedIn}
+              />
+            }
           />
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={
-                <Main
-                  weatherTemp={temp}
-                  onSelectCard={handleSelectedCard}
-                  clothingItems={clothingItems}
-                  onCardLike={handleCardLike}
-                  loggedIn={loggedIn}
-                />
-              }
-            />
-            <Route
-              path="/profile"
-              element={
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute loggedIn={loggedIn}>
                 <Profile
                   clothingItems={clothingItems}
                   onSelectCard={handleSelectedCard}
@@ -231,39 +232,39 @@ function App() {
                   loggedIn={loggedIn}
                   onCardLike={handleCardLike}
                 />
-              }
-            />
-          </Routes>
-          <Footer />
-          <AddItemModal
-            isOpen={activeModal === "create"}
-            handleCloseModal={handleCloseModal}
-            handleAddItem={handleItemSubmit}
+              </ProtectedRoute>
+            }
           />
-          <ItemModal
-            selectedCard={selectedCard}
-            onClose={handleCloseModal}
-            isOpen={activeModal === "preview"}
-            deleteCard={handleDeleteItem}
-          />
-          <RegisterModal
-            isOpen={activeModal === "signup"}
-            handleCloseModal={handleCloseModal}
-            handleSignUp={handleSignUp}
-          />
-          <LoginModal
-            isOpen={activeModal === "login"}
-            handleCloseModal={handleCloseModal}
-            handleLogin={handleLogin}
-          />
-          <EditProfileModal
-            isOpen={activeModal === "edit"}
-            handleCloseModal={handleCloseModal}
-            handleEditProfile={handleEditProfile}
-          />
-        </CurrentTemperatureUnitContext.Provider>
-      </CurrentUserContext.Provider>
-    </div>
+        </Routes>
+        <Footer />
+        <AddItemModal
+          isOpen={activeModal === "create"}
+          handleCloseModal={handleCloseModal}
+          handleAddItem={handleItemSubmit}
+        />
+        <ItemModal
+          selectedCard={selectedCard}
+          onClose={handleCloseModal}
+          isOpen={activeModal === "preview"}
+          deleteCard={handleDeleteItem}
+        />
+        <RegisterModal
+          isOpen={activeModal === "signup"}
+          handleCloseModal={handleCloseModal}
+          handleSignUp={handleSignUp}
+        />
+        <LoginModal
+          isOpen={activeModal === "login"}
+          handleCloseModal={handleCloseModal}
+          handleLogin={handleLogin}
+        />
+        <EditProfileModal
+          isOpen={activeModal === "edit"}
+          handleCloseModal={handleCloseModal}
+          handleEditProfile={handleEditProfile}
+        />
+      </CurrentTemperatureUnitContext.Provider>
+    </CurrentUserContext.Provider>
   );
 }
 
