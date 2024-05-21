@@ -11,7 +11,7 @@ const ModalWithForm = ({
 }) => {
   return (
     <div
-      className={`modal modal__type_${name} ${isOpen ? " modal__opened" : ""}`}
+      className={`modal modal__type_${name} ${isOpen ? " modal_opened" : ""}`}
     >
       <div className="modal__content">
         <button

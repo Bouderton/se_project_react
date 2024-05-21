@@ -11,7 +11,7 @@ const ItemModal = ({ selectedCard, onClose, isOpen, deleteCard }) => {
   const isOwn = selectedCard.owner === currentUser._id;
 
   return (
-    <div className={`modal ${isOpen ? " modal__opened" : ""}`}>
+    <div className={`modal ${isOpen ? " modal_opened" : ""}`}>
       <div className="modal__content">
         <button
           type="button"
