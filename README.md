@@ -5,7 +5,7 @@
 This project's main structure and functionality is made with React.js through Vite.
 The idea of the application is pretty simple - we make a call to an API, which then responds with the daily weather forecast. We collect the weather data, process it, and then based on the forecast, we recommend suitable clothing to the user. Every user will have their own account and clothing items for them, other users can see clothing items from each other, but cannot alter anyone's items but their own. This is thanks to the back end code written in Express, Node, and Mongoose. Users will be able to add and remove cards to the site as well as edit their profile information and log out of the app.
 
-## Technologies Used
+## Technologies Used (Front End)
 - HTML
 - CSS
 - JavaScript
