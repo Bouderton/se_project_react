@@ -17,7 +17,11 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 // Utils
-import { getForecast, parseWeatherData } from "../../utils/weatherApi";
+import {
+  getForecast,
+  parseWeatherData,
+  location,
+} from "../../utils/weatherApi";
 import api from "../../utils/api";
 import * as auth from "../../utils/auth";
 
@@ -33,6 +37,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [location, setLocation] = useState("");
   // const [token, setToken] = useState(null);
 
   const handleToggleSwitchChange = () => {
@@ -163,6 +168,7 @@ function App() {
       .then((data) => {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
+        setLocation(data.name);
       })
       .catch((err) => {
         alert(`${err} Failed to get weather forecast`);
@@ -220,6 +226,7 @@ function App() {
           handleSignUpModal={handleSignUpModal}
           handleLoginModal={handleLoginModal}
           isLoggedIn={loggedIn}
+          location={location}
         />
         <Routes>
           <Route

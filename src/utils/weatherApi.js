@@ -3,7 +3,7 @@
 import { checkResponse } from "./api";
 
 const latitude = 36.17;
-const longitude = 115.13;
+const longitude = -115.13;
 const APIkey = "6a90cb32554d48a125369911ffa482e2";
 
 export const getForecast = () => {
@@ -23,6 +23,10 @@ export const parseWeatherData = (data) => {
     },
   };
   return weather;
+};
+
+export const location = (data) => {
+  return data.name;
 };
 
 // weather.temperature.F = `${Math.round(data.main.temp)}°F`;

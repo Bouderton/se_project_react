@@ -12,6 +12,7 @@ const Header = ({
   handleSignUpModal,
   handleLoginModal,
   isLoggedIn,
+  location,
 }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
@@ -28,7 +29,9 @@ const Header = ({
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <div>{currentDate}, Las Vegas</div>
+        <div>
+          {currentDate}, {location}
+        </div>
       </div>
       <div className="header__info-container">
         <ToggleSwitch />
