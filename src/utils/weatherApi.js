@@ -18,19 +18,8 @@ export const parseWeatherData = (data) => {
     temperature: {
       F: `${Math.round(temp)}`,
       C: `${Math.round(temp - (32 * 5) / 9)}`,
-      type: getWeatherType(temp),
     },
   };
   console.log(weather.temperature);
   return weather;
-};
-
-export const getWeatherType = (temp) => {
-  if (temp >= 86) {
-    return "hot";
-  } else if (temp >= 66 && temp <= 85) {
-    return "warm";
-  } else if (temp <= 65) {
-    return "cold";
-  }
 };

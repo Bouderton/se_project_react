@@ -17,11 +17,7 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 // Utils
-import {
-  getForecast,
-  parseWeatherData,
-  getWeatherType,
-} from "../../utils/weatherApi";
+import { getForecast, parseWeatherData } from "../../utils/weatherApi";
 import api from "../../utils/api";
 import * as auth from "../../utils/auth";
 
@@ -238,7 +234,6 @@ function App() {
                 clothingItems={clothingItems}
                 onCardLike={handleCardLike}
                 loggedIn={loggedIn}
-                getWeatherType={getWeatherType}
               />
             }
           />
