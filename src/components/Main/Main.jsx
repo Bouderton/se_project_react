@@ -11,22 +11,13 @@ function Main({
   clothingItems,
   onCardLike,
   loggedIn,
+  getWeatherType,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
-  const weatherType = useMemo(() => {
-    if (temp >= 86) {
-      return "hot";
-    } else if (temp >= 66 && temp <= 85) {
-      return "warm";
-    } else if (temp <= 65) {
-      return "cold";
-    }
-  }, [weatherTemp]);
-
   const filteredCards = clothingItems.filter((item) => {
-    return item.weather.toLowerCase() === weatherType;
+    return item.weather.toLowerCase() === getWeatherType(temp);
   });
 
   return (

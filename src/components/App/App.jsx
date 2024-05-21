@@ -17,7 +17,11 @@ import { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 // Utils
-import { getForecast, parseWeatherData } from "../../utils/weatherApi";
+import {
+  getForecast,
+  parseWeatherData,
+  getWeatherType,
+} from "../../utils/weatherApi";
 import api from "../../utils/api";
 import * as auth from "../../utils/auth";
 
@@ -29,7 +33,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
-  const [currentTemperatureUnit, setcurrentTemperatureUnit] = useState("F");
+  const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
@@ -37,7 +41,7 @@ function App() {
   // const [token, setToken] = useState(null);
 
   const handleToggleSwitchChange = () => {
-    setcurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
+    setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
 
   // Modal Handlers
@@ -235,6 +239,7 @@ function App() {
                 clothingItems={clothingItems}
                 onCardLike={handleCardLike}
                 loggedIn={loggedIn}
+                getWeatherType={getWeatherType}
               />
             }
           />
