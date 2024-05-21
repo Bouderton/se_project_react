@@ -17,10 +17,9 @@
 
 .modal__content {
   background-color: white;
-  /* max-width: 496px; */
   width: 100%;
   border-radius: 20px;
-  /* padding: 28px 28px 36px; */
+
   font-family: "CabinetGrotesk-Medium", serif;
   font-size: 18px;
   line-height: 20px;
@@ -58,5 +57,4 @@
 
 .modal__image {
   max-width: 500px;
-  overflow: hidden;
 }
