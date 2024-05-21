@@ -119,9 +119,6 @@ function App() {
   // Authorization Handlers
 
   const handleSignUp = ({ email, password, name, avatar }) => {
-    if (!email || !password) {
-      return alert("Please enter an email and password");
-    }
     auth
       .signUp({ email, password, name, avatar })
       .then(() => {
@@ -270,11 +267,13 @@ function App() {
           isOpen={activeModal === "signup"}
           handleCloseModal={handleCloseModal}
           handleSignUp={handleSignUp}
+          handleLoginModal={handleLoginModal}
         />
         <LoginModal
           isOpen={activeModal === "login"}
           handleCloseModal={handleCloseModal}
           handleLogin={handleLogin}
+          handleSignUpModal={handleSignUpModal}
         />
         <EditProfileModal
           isOpen={activeModal === "edit"}

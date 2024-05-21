@@ -90,8 +90,13 @@
   position: relative;
   top: -10px;
   left: 480px;
+  cursor: pointer;
 }
 
-.modal__close-button:hover {
+.modal__button-or {
+  background: transparent;
+  border: none;
   cursor: pointer;
+  margin: 0 10px;
+  color: rgb(0, 0, 0, 0.5);
 }

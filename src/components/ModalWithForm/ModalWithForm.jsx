@@ -8,6 +8,8 @@ const ModalWithForm = ({
   name,
   isOpen,
   onSubmit,
+  spanText,
+  orModal,
 }) => {
   return (
     <div
@@ -22,9 +24,14 @@ const ModalWithForm = ({
         <h3 className="modal__form-title">{title}</h3>
         <form className="modal__form" onSubmit={onSubmit}>
           {children}
-          <button type="submit" className="modal__submit-button">
-            {buttonText}
-          </button>
+          <div className="modal__buttons-container">
+            <button type="submit" className="modal__submit-button">
+              {buttonText}
+            </button>
+            <button type="text" className="modal__button-or" onClick={orModal}>
+              {spanText}
+            </button>
+          </div>
         </form>
       </div>
     </div>
