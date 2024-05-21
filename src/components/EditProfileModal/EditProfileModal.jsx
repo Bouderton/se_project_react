@@ -21,6 +21,14 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
     e.preventDefault();
     handleEditProfile({ name, avatar });
   }
+
+  useEffect(() => {
+    if (isOpen) {
+      setName("");
+      setAvatar("");
+    }
+  }, [isOpen]);
+
   return (
     <ModalWithForm
       title="Edit Profile"
