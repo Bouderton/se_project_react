@@ -2,13 +2,9 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
 const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
-  // declare state for each input field
   const [name, setName] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
-
-  // use a useEffect hook to reset the input field state to empty strings when
-  // the modal is opened
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -29,8 +25,6 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
       setWeather("");
     }
   }, [isOpen]);
-
-  // create onChange handlers corresponding to each state variable
 
   function handleSubmit(e) {
     // prevent default behavior
