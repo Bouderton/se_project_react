@@ -39,10 +39,6 @@
   gap: 250px;
 }
 
-.modal__delete-button_hidden {
-  visibility: hidden;
-}
-
 .modal__delete-button_visible {
   display: flex;
   align-items: flex-start;

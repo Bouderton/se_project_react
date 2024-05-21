@@ -36,9 +36,7 @@ const ItemModal = ({ selectedCard, onClose, isOpen, deleteCard }) => {
             >
               Delete Item
             </button>
-          ) : (
-            <button className="modal__delete-button_hidden"></button>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
