@@ -28,7 +28,11 @@ const ModalWithForm = ({
             <button type="submit" className="modal__submit-button">
               {buttonText}
             </button>
-            <button type="text" className="modal__button-or" onClick={orModal}>
+            <button
+              type="button"
+              className="modal__button-or"
+              onClick={orModal}
+            >
               {spanText}
             </button>
           </div>

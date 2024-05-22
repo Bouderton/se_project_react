@@ -40,8 +40,6 @@ const RegisterModal = ({
     }
   }, [isOpen]);
 
-  // Submit Function
-
   function handleSubmit(e) {
     e.preventDefault();
     handleSignUp({ email, password, name, avatar });
