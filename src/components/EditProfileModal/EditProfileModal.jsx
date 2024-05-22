@@ -43,18 +43,19 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
           type="text"
           className="modal__form-input"
           name="name"
+          value={name}
           onChange={handleNameChange}
-          defaultValue={currentUser?.name}
           required
+          placeholder="Name"
         />
       </label>
       <label className="modal__form-label">
         Avatar
         <input
           className="modal__form-input"
-          placeholder={currentUser?.avatar}
+          placeholder="Avatar"
           type="url"
-          defaultValue={currentUser?.avatar}
+          value={avatar}
           onChange={handleAvatarChange}
           required
         />
