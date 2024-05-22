@@ -27,7 +27,7 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
       setName(currentUser?.name);
       setAvatar(currentUser?.avatar);
     }
-  }, [isOpen]);
+  }, [isOpen, currentUser]);
 
   return (
     <ModalWithForm
