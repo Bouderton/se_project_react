@@ -22,12 +22,12 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
     handleEditProfile({ name, avatar });
   }
 
-  // useEffect(() => {
-  //   if (isOpen) {
-  //     setName("");
-  //     setAvatar("");
-  //   }
-  // }, [isOpen]);
+  useEffect(() => {
+    if (isOpen) {
+      setName(currentUser?.name);
+      setAvatar(currentUser?.avatar);
+    }
+  }, [isOpen]);
 
   return (
     <ModalWithForm
