@@ -15,7 +15,7 @@ function Main({
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
   const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 999;
-  const tempF = currentTemperatureUnit === "F" ? temp : temp * 1.8 + 32;
+  const tempF = weatherTemp?.temperature?.F;
 
   const weatherType = useMemo(() => {
     if (tempF >= 86) {

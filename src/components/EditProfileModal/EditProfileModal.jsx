@@ -22,12 +22,12 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
     handleEditProfile({ name, avatar });
   }
 
-  useEffect(() => {
-    if (isOpen) {
-      setName("");
-      setAvatar("");
-    }
-  }, [isOpen]);
+  // useEffect(() => {
+  //   if (isOpen) {
+  //     setName("");
+  //     setAvatar("");
+  //   }
+  // }, [isOpen]);
 
   return (
     <ModalWithForm
@@ -42,9 +42,10 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
         <input
           type="text"
           className="modal__form-input"
+          name="name"
           onChange={handleNameChange}
-          value={name}
-          placeholder={currentUser?.name}
+          defaultValue={currentUser?.name}
+          required
         />
       </label>
       <label className="modal__form-label">
@@ -53,8 +54,9 @@ const EditProfileModal = ({ isOpen, handleCloseModal, handleEditProfile }) => {
           className="modal__form-input"
           placeholder={currentUser?.avatar}
           type="url"
-          value={avatar}
+          defaultValue={currentUser?.avatar}
           onChange={handleAvatarChange}
+          required
         />
       </label>
     </ModalWithForm>

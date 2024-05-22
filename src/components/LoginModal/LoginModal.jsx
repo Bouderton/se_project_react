@@ -51,6 +51,7 @@ const LoginModal = ({
           placeholder="Email"
           className="modal__form-input"
           onChange={handleEmailChange}
+          required
         />
       </label>
       <label className="modal__form-label">
@@ -64,6 +65,7 @@ const LoginModal = ({
           placeholder="Password"
           className="modal__form-input"
           onChange={handlePasswordChange}
+          required
         />
       </label>
     </ModalWithForm>

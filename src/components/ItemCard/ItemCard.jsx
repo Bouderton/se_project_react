@@ -31,7 +31,7 @@ const ItemCard = ({ item, onSelectCard, onCardLike, loggedIn }) => {
       <img
         src={item.imageUrl}
         className="card__image"
-        alt="card image"
+        alt={item.name}
         onClick={() => onSelectCard(item)}
       />
     </div>

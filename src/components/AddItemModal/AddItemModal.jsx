@@ -53,6 +53,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
           className="modal__form-input"
           onChange={handleNameChange}
           value={name}
+          required
         />
       </label>
       <label className="modal__form-label">
@@ -65,6 +66,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
           className="modal__form-input"
           onChange={handleUrlChange}
           value={imageUrl}
+          required
         />
       </label>
       <div className="modal__weather-type">
@@ -77,6 +79,7 @@ const AddItemModal = ({ isOpen, handleAddItem, handleCloseModal }) => {
               id="hot"
               value="hot"
               onChange={handleWeatherChange}
+              required
             />
             Hot
           </label>
