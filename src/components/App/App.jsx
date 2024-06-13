@@ -120,9 +120,10 @@ function App() {
   const handleSignUp = ({ email, password, name, avatar }) => {
     auth
       .signUp({ email, password, name, avatar })
-      .then(() => {
+      .then((res) => {
         handleSignUpModal({ email, password, name, avatar });
         handleCloseModal();
+        handleLogin({ email, password });
         setCurrentUser({ email, password, name, avatar });
         setLoggedIn(true);
       })
