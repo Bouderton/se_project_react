@@ -32,10 +32,10 @@ npm run dev — to launch the server with the hot reload feature
 
 ## Deployments
 
-# Front-End Domain
+### Front-End Domain
 
 [https://wtwr.bizzapp.com/]
 
-# Back-End Domain
+### Back-End Domain
 
 [https://api.wtwr.bizzapp.com/]
