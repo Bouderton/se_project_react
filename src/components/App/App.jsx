@@ -165,12 +165,13 @@ function App() {
         const checkTime = Date.now();
         setTemp(temperature);
         setLocation(data.name);
-        setWeatherCode(getWeatherCode);
-        if (checkTime <= data.sys.sunrise) {
+        if (checkTime >= data.sys.sunrise) {
           setTime("Day");
-        } else if (checkTime >= data.sys.sunset) {
+        }
+        if (checkTime <= data.sys.sunset) {
           setTime("Night");
         }
+        return time;
       })
       .catch((err) => {
         alert(`${err} Failed to get weather forecast`);
