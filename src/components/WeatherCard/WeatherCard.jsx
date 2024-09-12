@@ -51,7 +51,6 @@ const WeatherCard = ({ weatherTemp = "", time, weatherCode }) => {
       return imageUrl;
     }
   });
-  console.log(imageUrl);
   return (
     <section className={time === "Day" ? "weather day" : "weather night"}>
       <p className="weather__info">
