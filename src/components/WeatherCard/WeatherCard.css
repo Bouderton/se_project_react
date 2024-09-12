@@ -19,6 +19,14 @@
   background: #00a3ff;
 }
 
+.day {
+  background: #00a3ff;
+}
+
+.night {
+  background: #286897;
+}
+
 .weather__image {
   border-radius: 12px 12px 0 0;
   max-width: 150px;

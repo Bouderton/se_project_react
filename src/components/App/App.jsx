@@ -34,6 +34,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [location, setLocation] = useState("");
+  const [time, setTime] = useState("");
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -161,6 +162,12 @@ function App() {
         const temperature = parseWeatherData(data);
         setTemp(temperature);
         setLocation(data.name);
+        const checkTime = Date.now();
+        if (checkTime <= data.sys.sunrise) {
+          setTime("Day");
+        } else if (checkTime >= data.sys.sunset) {
+          setTime("Night");
+        }
       })
       .catch((err) => {
         alert(`${err} Failed to get weather forecast`);
@@ -231,6 +238,7 @@ function App() {
                 clothingItems={clothingItems}
                 onCardLike={handleCardLike}
                 loggedIn={loggedIn}
+                time={time}
               />
             }
           />
