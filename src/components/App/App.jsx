@@ -35,6 +35,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
+  const [weatherCode, setWeatherCode] = useState(null);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -160,9 +161,11 @@ function App() {
     getForecast()
       .then((data) => {
         const temperature = parseWeatherData(data);
+        const getWeatherCode = Object.values(data.weather)[0].id;
+        const checkTime = Date.now();
         setTemp(temperature);
         setLocation(data.name);
-        const checkTime = Date.now();
+        setWeatherCode(getWeatherCode);
         if (checkTime <= data.sys.sunrise) {
           setTime("Day");
         } else if (checkTime >= data.sys.sunset) {
