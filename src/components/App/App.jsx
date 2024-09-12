@@ -171,7 +171,6 @@ function App() {
         } else {
           setTime("Night");
         }
-
         return time;
       })
       .catch((err) => {

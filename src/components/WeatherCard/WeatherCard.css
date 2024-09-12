@@ -14,6 +14,7 @@
   align-items: center;
   margin: 28px auto 0;
   background: #00a3ff;
+  position: relative;
 }
 
 .day {
@@ -25,7 +26,9 @@
 }
 
 .weather__image {
-  border-radius: 12px 12px 0 0;
-
+  border-radius: 12px 12px 12px 0;
+  position: absolute;
+  top: 0;
+  right: 0;
   object-fit: cover;
 }
