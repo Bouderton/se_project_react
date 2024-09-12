@@ -162,15 +162,16 @@ function App() {
       .then((data) => {
         const temperature = parseWeatherData(data);
         const getWeatherCode = Object.values(data.weather)[0].id;
-        const checkTime = Date.now();
+        const checkTime = data.dt;
         setTemp(temperature);
+        setWeatherCode(getWeatherCode);
         setLocation(data.name);
-        if (checkTime >= data.sys.sunrise) {
+        if (checkTime >= data.sys.sunrise && checkTime <= data.sys.sunset) {
           setTime("Day");
-        }
-        if (checkTime <= data.sys.sunset) {
+        } else {
           setTime("Night");
         }
+
         return time;
       })
       .catch((err) => {
@@ -243,6 +244,7 @@ function App() {
                 onCardLike={handleCardLike}
                 loggedIn={loggedIn}
                 time={time}
+                weatherCode={weatherCode}
               />
             }
           />

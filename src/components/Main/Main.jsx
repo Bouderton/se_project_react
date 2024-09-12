@@ -12,6 +12,7 @@ function Main({
   onCardLike,
   loggedIn,
   time,
+  weatherCode,
 }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
 
@@ -34,7 +35,7 @@ function Main({
 
   return (
     <main className="main">
-      <WeatherCard day={true} type="cloudy" weatherTemp={temp} time={time} />
+      <WeatherCard weatherTemp={temp} time={time} weatherCode={weatherCode} />
       <section className="card__section" id="card-section">
         Today is {`${temp}°${currentTemperatureUnit}`} / You may want to wear:
         <div className="card__items">
