@@ -4,7 +4,7 @@ export const checkResponse = (res) => {
 
 export const baseUrl =
   process.env.NODE_ENV === "production"
-    ? "https://api.wtwr.bizzapp.com"
+    ? "https://api.wtwr.mindhackers.org"
     : "http://localhost:3001";
 
 const getItems = () => {
