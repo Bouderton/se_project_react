@@ -30,12 +30,6 @@ npm run dev — to launch the server with the hot reload feature
 
 - [Figma Design](https://www.figma.com/file/DTojSwldenF9UPKQZd6RRb/Sprint-10%3A-WTWR)
 
-## Deployments
+### Live Website
 
-### Front-End Domain
-
-[https://wtwr.bizzapp.com/]
-
-### Back-End Domain
-
-[https://api.wtwr.bizzapp.com/]
+[https://wtwr.mindhackers.org/]
