@@ -57,7 +57,7 @@ const LoginModal = ({
       <label className="modal__form-label">
         Password
         <input
-          type="text"
+          type="password"
           name="password"
           value={password}
           minLength="1"

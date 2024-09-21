@@ -72,7 +72,7 @@ const RegisterModal = ({
       <label className="modal__form-label">
         Password
         <input
-          type="text"
+          type="password"
           name="password"
           minLength="1"
           maxLength="30"

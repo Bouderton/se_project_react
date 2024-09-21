@@ -9,6 +9,11 @@
   font-weight: 600;
 }
 
+.header__mobile-container {
+  display: none;
+  visibility: hidden;
+}
+
 .header__logo {
   display: flex;
   gap: 20px;
@@ -41,4 +46,16 @@
 
 .header__button:hover {
   cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    /* display: none; */
+    visibility: hidden;
+  }
+
+  .header__mobile-container {
+    visibility: visible;
+    display: flex;
+  }
 }

@@ -1,6 +1,6 @@
 import "./Header.css";
 // import React from "react";
-import avatar from "../../images/avatar-logo.svg";
+import HeaderMobile from "../HeaderMobile/HeaderMobile";
 import logo from "../../images/wtwr.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
@@ -78,6 +78,9 @@ const Header = ({
             </button>
           </>
         )}
+        <div className="header__mobile-container">
+          <HeaderMobile />
+        </div>
       </div>
     </header>
   );
