@@ -56,3 +56,10 @@
   width: 20px;
   height: 20px;
 }
+
+@media screen and (max-width: 550px) {
+  .card__image {
+    width: 350px;
+    height: 350px;
+  }
+}
