@@ -4,4 +4,17 @@
   margin: 171px 40px 24px;
   font-size: 18px;
   font-family: "CabinetGrotesk-Medium", serif;
+  height: 20px;
+}
+
+.footer__info-container {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  gap: 10px;
+}
+
+.footer__info-icon {
+  width: 20px;
+  height: 20px;
 }
