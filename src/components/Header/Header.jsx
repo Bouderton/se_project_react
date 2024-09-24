@@ -86,6 +86,8 @@ const Header = ({
           isLoggedIn={isLoggedIn}
           location={location}
           currentDate={currentDate}
+          currentUser={currentUser}
+          onCreateModal={onCreateModal}
         />
       </div>
     </header>
