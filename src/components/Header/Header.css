@@ -47,6 +47,19 @@
   gap: 10px;
 }
 
+.header__mobile-close {
+  background: transparent url("../../images/mobile_close.svg") center no-repeat;
+  width: 25px;
+  height: 25px;
+  border: none;
+  padding: 0;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  cursor: pointer;
+}
+
 .header__logo {
   display: flex;
   gap: 20px;

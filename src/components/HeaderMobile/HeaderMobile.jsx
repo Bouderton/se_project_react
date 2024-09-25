@@ -59,6 +59,11 @@ const HeaderMobile = ({
               mobileMenu === true ? `opened` : ""
             }`}
           >
+            <button
+              type="text"
+              className="header__mobile-close"
+              onClick={closeMobileMenu}
+            />
             <div className="header__mobile-menu-content">
               <img
                 src={currentUser?.avatar}
