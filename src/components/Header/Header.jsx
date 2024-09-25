@@ -88,6 +88,8 @@ const Header = ({
           currentDate={currentDate}
           currentUser={currentUser}
           onCreateModal={onCreateModal}
+          handleSignUpModal={handleSignUpModal}
+          handleLoginModal={handleLoginModal}
         />
       </div>
     </header>
