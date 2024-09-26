@@ -5,7 +5,6 @@
 }
 
 .header__mobile {
-  width: 100%;
   height: 60px;
   font-size: 18px;
   font-family: "CabinetGrotesk-Medium", serif;
@@ -107,8 +106,9 @@
   position: absolute;
   top: 0;
   min-width: 320px;
-  /* width: 100%; */
   left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
   background: #00a3ff;
   display: flex;
