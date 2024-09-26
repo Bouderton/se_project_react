@@ -1,6 +1,7 @@
 import "../Header/Header.css";
 import logo from "../../images/wtwr.svg";
 import mobileicon from "../../images/mobileicon.svg";
+import wtwr_light from "../../images/wtwr_light.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -25,6 +26,7 @@ const HeaderMobile = ({
   }
 
   return (
+    //Logged in user
     <>
       {isLoggedIn === true ? (
         <>
@@ -61,23 +63,31 @@ const HeaderMobile = ({
               mobileMenu === true ? `opened` : ""
             }`}
           >
+            <img
+              src={wtwr_light}
+              alt="WTWR Mobile Logo"
+              className="header__mobile-logo"
+            />
             <button
               type="text"
               className="header__mobile-close"
               onClick={closeMobileMenu}
             />
             <div className="header__mobile-menu-content">
-              <img
-                src={currentUser?.avatar}
-                alt="avatar logo"
-                className="header__avatar-img"
-                style={{ width: "200px", height: "200px", margin: "0 auto" }}
-              />
+              <Link to="/profile">
+                <img
+                  src={currentUser?.avatar}
+                  alt="avatar logo"
+                  className="header__avatar-img"
+                  style={{ width: "200px", height: "200px", margin: "0 auto" }}
+                />
+              </Link>
               <Link
                 to="/profile"
                 style={{
                   textDecoration: "none",
                   color: "white",
+                  fontSize: "35px",
                 }}
               >
                 {currentUser?.name}
@@ -86,7 +96,7 @@ const HeaderMobile = ({
                 type="text"
                 className="header__button"
                 onClick={onCreateModal}
-                style={{ color: "white", fontSize: "25px" }}
+                style={{ color: "white", fontSize: "35px" }}
               >
                 +Add New Clothes
               </button>
@@ -94,6 +104,7 @@ const HeaderMobile = ({
           </div>
         </>
       ) : (
+        // Logged out User
         <>
           <header className="header__mobile">
             <div className="header__mobile-info">
@@ -135,6 +146,11 @@ const HeaderMobile = ({
               className="header__mobile-close"
               onClick={closeMobileMenu}
             />
+            <img
+              src={wtwr_light}
+              alt="WTWR Mobile Logo"
+              className="header__mobile-logo"
+            />
             <div className="header__mobile-menu-content">
               <>
                 <button
@@ -143,8 +159,9 @@ const HeaderMobile = ({
                   className="header__button"
                   style={{
                     color: "white",
-                    fontSize: "40px",
-                    marginTop: "50px",
+                    fontSize: "50px",
+                    letterSpacing: "3px",
+                    marginTop: "75px",
                   }}
                 >
                   Sign Up
@@ -155,7 +172,8 @@ const HeaderMobile = ({
                   className="header__button"
                   style={{
                     color: "white",
-                    fontSize: "40px",
+                    fontSize: "50px",
+                    letterSpacing: "3px",
                     marginTop: "15px",
                   }}
                 >
