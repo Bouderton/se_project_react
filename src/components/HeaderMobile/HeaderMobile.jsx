@@ -102,7 +102,7 @@ const HeaderMobile = ({
                 type="text"
                 className="header__button"
                 onClick={onCreateModal}
-                style={{ color: "white", fontSize: "35px" }}
+                style={{ color: "white", fontSize: "35px", lineHeight: "30px" }}
               >
                 +Add New Clothes
               </button>
