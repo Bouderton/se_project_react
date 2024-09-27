@@ -13,6 +13,7 @@ const Header = ({
   handleLoginModal,
   isLoggedIn,
   location,
+  time,
 }) => {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
@@ -90,6 +91,7 @@ const Header = ({
           onCreateModal={onCreateModal}
           handleSignUpModal={handleSignUpModal}
           handleLoginModal={handleLoginModal}
+          time={time}
         />
       </div>
     </header>

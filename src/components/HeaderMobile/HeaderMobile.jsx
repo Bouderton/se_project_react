@@ -14,6 +14,7 @@ const HeaderMobile = ({
   onCreateModal,
   handleSignUpModal,
   handleLoginModal,
+  time,
 }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -62,6 +63,11 @@ const HeaderMobile = ({
             className={`header__mobile-menu ${
               mobileMenu === true ? `opened` : ""
             }`}
+            style={
+              time === "Day"
+                ? { height: "350px", background: "#00a3ff" }
+                : { height: "350px", background: "#286897" }
+            }
           >
             <img
               src={wtwr_light}
@@ -139,7 +145,11 @@ const HeaderMobile = ({
             className={`header__mobile-menu ${
               mobileMenu === true ? `opened` : ""
             }`}
-            style={{ height: "300px" }}
+            style={
+              time === "Day"
+                ? { height: "300px", background: "#00a3ff" }
+                : { height: "300px", background: "#286897" }
+            }
           >
             <button
               type="text"

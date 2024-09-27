@@ -230,6 +230,7 @@ function App() {
           handleLoginModal={handleLoginModal}
           isLoggedIn={loggedIn}
           location={location}
+          time={time}
         />
         <Routes>
           <Route
