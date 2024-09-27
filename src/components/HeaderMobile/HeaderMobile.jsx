@@ -140,7 +140,6 @@ const HeaderMobile = ({
               </button>
             </div>
           </header>
-          {/* USE DAY/NIGHT CYCLE FOR MENU */}
           <div
             className={`header__mobile-menu ${
               mobileMenu === true ? `opened` : ""

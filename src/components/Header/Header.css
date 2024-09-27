@@ -115,7 +115,7 @@
 
 .header__mobile-menu {
   padding: 15px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -138,6 +138,7 @@
   font-family: "CabinetGrotesk-Medium", serif;
   font-weight: 600;
   text-align: center;
+  width: 100%;
 }
 
 .opened {
@@ -157,10 +158,13 @@
 }
 
 @media screen and (max-width: 400px) {
+  .header {
+  }
   .header__date-time {
     font-size: 15px;
   }
   .header__mobile {
+    height: 90px;
     gap: 5px;
   }
   .header__info-container {
