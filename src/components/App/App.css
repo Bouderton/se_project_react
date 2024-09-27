@@ -1,3 +1,8 @@
-body {
+html {
   min-width: 320px;
 }
+
+/* * {
+  outline: thin solid red;
+  visibility: visible;
+} */

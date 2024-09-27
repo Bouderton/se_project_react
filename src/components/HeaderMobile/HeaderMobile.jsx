@@ -37,9 +37,9 @@ const HeaderMobile = ({
                   <img src={logo} alt="logo" />
                 </Link>
               </div>
-              <div>
+              <p className="header__date-time">
                 {currentDate}, {location}
-              </div>
+              </p>
             </div>
             <div className="header__info-container">
               <ToggleSwitch />
