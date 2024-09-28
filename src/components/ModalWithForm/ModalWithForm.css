@@ -25,7 +25,6 @@
   flex-direction: column;
   background-color: white;
   max-width: 500px;
-  /* width: 100%; */
   border-radius: 20px;
   padding: 28px 28px 36px;
   font-family: "CabinetGrotesk-Medium", serif;
@@ -36,7 +35,7 @@
 .modal__form-title {
   font-size: 16px;
   margin: 0 0 24px;
-  width: 95px;
+  width: 100%;
 }
 
 .modal__form {

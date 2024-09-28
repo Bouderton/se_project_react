@@ -47,3 +47,36 @@
   object-fit: cover;
   margin: 0;
 }
+
+@media screen and (max-width: 800px) {
+  .sidebar {
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .sidebar__container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin: 0 auto;
+  }
+
+  .sidebar__avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  .sidebar__profile-text {
+    font-size: 30px;
+  }
+
+  .sidebar__profile-data {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .sidebar__user-button {
+    font-size: 25px;
+    text-align: center;
+  }
+}

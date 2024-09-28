@@ -27,3 +27,26 @@
   gap: 20px;
   margin: 16px 0;
 }
+
+@media screen and (max-width: 800px) {
+  .profile__clothes-items {
+    justify-content: center;
+    margin: 0;
+  }
+
+  .profile__clothes-text-container {
+    justify-content: center;
+    height: 50px;
+  }
+
+  .profile__clothes-add-button {
+    font-size: 25px;
+  }
+
+  .profile__clothes-title {
+    font-size: 25px;
+    height: 50px;
+    margin: 0;
+    align-content: center;
+  }
+}
