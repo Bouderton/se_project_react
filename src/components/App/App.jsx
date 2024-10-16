@@ -36,6 +36,8 @@ function App() {
   const [location, setLocation] = useState("");
   const [time, setTime] = useState("");
   const [weatherCode, setWeatherCode] = useState(null);
+  const [lat, setLat] = useState(null);
+  const [long, setLong] = useState(null);
 
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
@@ -158,7 +160,25 @@ function App() {
 
   // useEffect APIs
   useEffect(() => {
-    getForecast()
+    const options = {
+      enableHighAccuracy: false,
+      maximumAge: 0,
+    };
+
+    function success(pos) {
+      const crd = pos.coords;
+      setLat(Math.ceil(crd.latitude * 100) / 100);
+      setLong(Math.ceil(crd.longitude * 100) / 100);
+    }
+
+    function error() {
+      setLat(40.71);
+      setLong(-74.0);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+
+    getForecast(lat, long)
       .then((data) => {
         const temperature = parseWeatherData(data);
         const getWeatherCode = Object.values(data.weather)[0].id;
@@ -176,7 +196,7 @@ function App() {
       .catch((err) => {
         console.log(`${err} Failed to get weather forecast`);
       });
-  }, []);
+  }, [lat, long]);
 
   useEffect(() => {
     api
@@ -201,6 +221,14 @@ function App() {
         .catch((err) => console.log(err));
     }
   }, [loggedIn]);
+
+  useEffect(() => {
+    const hasReloaded = sessionStorage.getItem("reloaded");
+    if (!hasReloaded) {
+      sessionStorage.setItem("reloaded", true);
+      window.location.reload();
+    }
+  }, []);
 
   useEffect(() => {
     if (!activeModal) return;
