@@ -174,7 +174,7 @@ function App() {
         return time;
       })
       .catch((err) => {
-        alert(`${err} Failed to get weather forecast`);
+        console.log(`${err} Failed to get weather forecast`);
       });
   }, []);
 

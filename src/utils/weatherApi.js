@@ -4,19 +4,26 @@ let latitude;
 let longitude;
 
 const options = {
-  enableHighAccuracy: true,
+  enableHighAccuracy: false,
   timeout: 5000,
   maximumAge: 0,
 };
 
+// window.location.reload(true);
 function success(pos) {
   const crd = pos.coords;
-  latitude = crd.latitude;
-  longitude = crd.longitude;
+  latitude = Math.ceil(crd.latitude * 100) / 100;
+  longitude = Math.ceil(crd.longitude * 100) / 100;
+  const hasReloaded = localStorage.getItem("hasReloaded");
+  if (!hasReloaded) {
+    localStorage.setItem("hasReloaded", true);
+    window.location.reload();
+  }
 }
 
-function error(err) {
-  console.warn(`ERROR(${err.code}): ${err.message}`);
+function error() {
+  latitude = 36.17;
+  longitude = -115.14;
 }
 
 navigator.geolocation.getCurrentPosition(success, error, options);
