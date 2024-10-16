@@ -1,7 +1,25 @@
 import { checkResponse } from "./api";
 
-const latitude = 36.17;
-const longitude = -115.13;
+let latitude;
+let longitude;
+
+const options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0,
+};
+
+function success(pos) {
+  const crd = pos.coords;
+  latitude = crd.latitude;
+  longitude = crd.longitude;
+}
+
+function error(err) {
+  console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
 
 const APIkey = "6a90cb32554d48a125369911ffa482e2";
 
