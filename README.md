@@ -9,14 +9,13 @@ The idea of the application is pretty simple - we make a call to an API, which t
 
 ### Technologies Used
 
+- React & JSX
+- JavaScript
 - HTML
 - CSS
-- JavaScript
-- React & JSX
 - JSON
 - Flexbox
 - Positioning
-- NPM and Node
 
 ### Running The Project
 
