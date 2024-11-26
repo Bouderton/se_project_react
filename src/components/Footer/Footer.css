@@ -1,10 +1,12 @@
 .footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 171px 40px 24px;
   font-size: 18px;
   font-family: "CabinetGrotesk-Medium", serif;
-  height: 20px;
+  /* height: 20px; */
+  gap: 20px;
 }
 
 .footer__info-container {
@@ -17,4 +19,10 @@
 .footer__info-icon {
   width: 20px;
   height: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .footer {
+    font-size: 12px;
+  }
 }

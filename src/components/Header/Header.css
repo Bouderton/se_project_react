@@ -88,6 +88,7 @@
 }
 
 .header__date-time {
+  font-size: 15px;
   margin: 0;
 }
 
@@ -151,6 +152,10 @@
     visibility: hidden;
   }
 
+  .header__button {
+    height: 50px;
+  }
+
   .header__mobile-container {
     visibility: visible;
     display: contents;
@@ -158,14 +163,12 @@
 }
 
 @media screen and (max-width: 400px) {
-  .header__date-time {
+  .header__mobile {
+    height: 70px;
+    gap: 5px;
     font-size: 15px;
   }
-  .header__mobile {
-    height: 90px;
-    gap: 5px;
-  }
   .header__info-container {
-    gap: 5px;
+    gap: 10px;
   }
 }

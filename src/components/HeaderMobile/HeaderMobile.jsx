@@ -38,7 +38,7 @@ const HeaderMobile = ({
                   <img src={logo} alt="logo" />
                 </Link>
               </div>
-              <p className="header__date-time">
+              <p>
                 {currentDate}, {location}
               </p>
             </div>
