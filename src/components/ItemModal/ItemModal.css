@@ -51,6 +51,17 @@
 }
 
 .modal__image {
-  width: 100%;
-  border-radius: 15px;
+  max-width: 100%;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+@media screen and (max-height: 650px) {
+  .modal__content {
+    width: 75%;
+    height: 75%;
+  }
+  .modal__image {
+    height: 400px;
+  }
 }

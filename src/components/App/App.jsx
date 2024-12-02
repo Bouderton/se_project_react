@@ -167,6 +167,14 @@ function App() {
     setLoading(false);
   }, 2000);
 
+  useEffect(() => {
+    setTimeout(() => {
+      alert(
+        "If your location and weather is wrong, check your location priveledges in your brower"
+      );
+    }, 5000);
+  }, []);
+
   // Fetching Location Data
   useEffect(() => {
     const options = {
@@ -183,9 +191,6 @@ function App() {
     function error() {
       setLat(40.71);
       setLong(-74.0);
-      setTimeout(() => {
-        alert("You did not allow location, defaulting to New York");
-      }, 2250);
     }
 
     navigator.geolocation.getCurrentPosition(success, error, options);
@@ -206,7 +211,7 @@ function App() {
         return time;
       })
       .catch((err) => {
-        console.log(`${err} Failed to get weather forecast`);
+        // console.log(`${err} Failed to get weather forecast`);
       });
   }, [lat, long]);
 
@@ -217,7 +222,7 @@ function App() {
         setClothingItems(items);
       })
       .catch((err) => {
-        console.log(`${err}`);
+        // console.log(`${err}`);
       });
   }, []);
 
